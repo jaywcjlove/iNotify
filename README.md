@@ -54,3 +54,25 @@ iNotify.setFavicon(10)
 ```js
 iNotify.faviconClear()
 ```
+
+
+## 例子
+
+```js
+function iconNotify(num){
+    if(!notify) notify = iNotify.init({
+        effect: 'flash',
+        interval: 500
+    });
+    if(num===0){
+        iNotify.faviconClear()
+        notify.setTitle();
+    }else if(num<100){
+        iNotify.setFavicon(num)
+        notify.setTitle("有新消息！");
+    }else if(num>99){
+        iNotify.setFavicon('N')
+        notify.setTitle("有新消息！");
+    }
+}
+```
