@@ -74,7 +74,7 @@
         faviconClear:function(){
             var newicon = document.getElementById('new'+this.updateFavicon.id)
                 head = document.getElementsByTagName('head')[0]
-            newicon.remove()
+            newicon&&newicon.remove()
             head.appendChild(this.cloneFavicon);
             this.favicon = this.cloneFavicon
         },
