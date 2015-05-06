@@ -1,0 +1,23 @@
+{
+  "name": "iNotify",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jaywcjlove/iNotify",
+  "authors": [
+    "jaywcjlove <398188662@qq.com>"
+  ],
+  "description": "Show notification on title title",
+  "keywords": [
+    "iNotify",
+    "front-end",
+    "title",
+    "notification"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
