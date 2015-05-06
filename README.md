@@ -7,6 +7,21 @@
 ![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/iNotify.png?raw=true)
 
 
+## 下载
+
+### npm
+
+```
+$ npm install title-notify
+```
+
+
+### bower
+
+```
+$ bower install inotify
+```
+
 ## init
 
 effect: flash | scroll | favicon  

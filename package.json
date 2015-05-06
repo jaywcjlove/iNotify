@@ -1,6 +1,6 @@
 {
     "name": "title-notify",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Show notification on title title",
     "dependencies": {},
     "repository": {
@@ -8,10 +8,7 @@
         "url": "https://github.com/jaywcjlove/iNotify.git"
     },
     "keywords": [
-        "iNotify",
-        "front-end",
-        "title",
-        "notification"
+        "inotify"
     ],
     "author": "kenny wang",
     "license": "MIT",
