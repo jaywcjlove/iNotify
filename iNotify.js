@@ -86,36 +86,28 @@
         }
     };
     function changeFavicon(num,settings){
-        if (num > 0) {
-            var canvas = document.createElement('canvas'),
-                img = document.createElement('img'),
-                head = document.getElementsByTagName('head')[0],
-                linkTag = document.createElement('link'),
-                ctx;
+        var canvas = document.createElement('canvas'),
+            img = document.createElement('img'),
+            head = document.getElementsByTagName('head')[0],
+            linkTag = document.createElement('link'),
+            ctx;
 
-            canvas.height = canvas.width = 16;
-            ctx = canvas.getContext('2d');
-            ctx.fillStyle = settings.backgroundColor;
-            ctx.fillRect(0, 0, 16, 16);
-            var centerX = canvas.width / 2;
-            var centerY = canvas.height / 2;
-            var radius = 8;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-            ctx.fill();
+        canvas.height = canvas.width = 32;
+        ctx = canvas.getContext('2d');
+        ctx.fillStyle = settings.backgroundColor;
+        ctx.fillRect(0, 0, 32, 32);
 
-            ctx.textAlign = "center";
-            ctx.font = '10px "helvetica", sans-serif';
-            ctx.fillStyle = settings.textColor;
-            ctx.fillText(num, 8, 12);
+        ctx.textAlign = "center";
+        ctx.font = '22px "helvetica", sans-serif';
+        ctx.fillStyle = settings.textColor;
+        ctx.fillText(num, 16, 24);
 
-            //生成到
-            linkTag.setAttribute('rel','shortcut icon');
-            linkTag.setAttribute('type','image/x-icon');
-            linkTag.setAttribute('id', 'new'+settings.id);
-            linkTag.setAttribute('href', canvas.toDataURL('image/png'));
-            head.appendChild(linkTag); 
-        }
+        //生成到
+        linkTag.setAttribute('rel','shortcut icon');
+        linkTag.setAttribute('type','image/x-icon');
+        linkTag.setAttribute('id', 'new'+settings.id);
+        linkTag.setAttribute('href', canvas.toDataURL('image/png'));
+        head.appendChild(linkTag); 
     };
     return iNotify
 }));
