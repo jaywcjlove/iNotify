@@ -1,19 +1,25 @@
 {
-    "name": "title-notify",
-    "version": "1.0.3",
-    "description": "Show notification on title title",
-    "dependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jaywcjlove/iNotify.git"
-    },
-    "keywords": [
-        "inotify"
-    ],
-    "author": "kenny wang",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jaywcjlove/iNotify/issues"
-    },
-    "homepage": "https://github.com/jaywcjlove/iNotify"
+  "name": "title-notify",
+  "version": "1.0.3",
+  "description": "Show notification on title title",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaywcjlove/iNotify.git"
+  },
+  "keywords": [
+    "inotify"
+  ],
+  "author": "kenny wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaywcjlove/iNotify/issues"
+  },
+  "homepage": "https://github.com/jaywcjlove/iNotify",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4"
+  }
 }
