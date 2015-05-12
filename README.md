@@ -32,7 +32,7 @@ iNotify.init({
     effect: 'flash', // flash | scroll 闪烁还是滚动
     //可选播放声音
     audio:{
-        file: 'audio.mp3'
+        file: 'msg.mp4'
     },
     //标题闪烁，或者滚动速度
     interval: 1000,
@@ -185,7 +185,7 @@ var iN = iNotify.init({
     interval: 500,
     message:"有消息拉！",
     audio:{
-        file: 'msg.wav'
+        file: 'msg.mp4'
     }
 }).setFavicon(10).player();
 ```
