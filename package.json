@@ -1,7 +1,7 @@
 {
   "name": "title-notify",
-  "version": "1.0.3",
-  "description": "Show notification on title title",
+  "version": "1.0.4",
+  "description": "Show notification on title, And play sounds.",
   "dependencies": {},
   "repository": {
     "type": "git",
