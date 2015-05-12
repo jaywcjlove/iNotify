@@ -18,8 +18,6 @@
                 id: "favicon",
                 textColor: "#fff",
                 backgroundColor: "#2F9A00",
-                location: "full",
-                shape: "square"
             }
             this.favicon = document.querySelectorAll('link[rel~=shortcut]')[0]
             this.favicon = this.favicon;
@@ -57,6 +55,7 @@
         },
         //设置网页Icon
         setFavicon:function(num){
+            if(!num&&num!==0) return this.faviconClear();
             var oldicon = document.getElementById('new'+this.updateFavicon.id)
             if(this.favicon) this.favicon.remove();
             if(oldicon) oldicon.remove();
