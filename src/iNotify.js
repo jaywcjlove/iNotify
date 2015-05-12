@@ -40,6 +40,25 @@
                     break;
             }
         },
+        setURL:function(url){
+            if(!this.audioElm){
+                url=url?this.audio.file=url:this.audio.file;
+                this.audioElm = document.createElement('audio')
+                document.body.appendChild(this.audioElm)
+            }
+            url && (this.audioElm.src = url);
+            return this
+        },
+        loopPlay:function(){
+            this.setURL()
+            this.audioElm.loop = true
+            this.player()
+            return this
+        },
+        stopPlay:function(){
+            this.audioElm && (this.audioElm.loop = false,this.audioElm.pause())
+            return this
+        },
         player:function(){
             if(!this.audio || !this.audio.file) return;
             if(!this.audioElm){
@@ -99,9 +118,6 @@
             return this
         }
     };
-    function creatAuto (argument) {
-        // body...
-    }
     function changeFavicon(num,settings){
         var canvas = document.createElement('canvas'),
             img = document.createElement('img'),
