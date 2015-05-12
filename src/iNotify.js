@@ -10,6 +10,7 @@
     var repeatableEffects = ['flash', 'scroll']
     var iNotify = {
         init:function(config){
+            if(!config) config = {}
             this.interval = config.interval || 200//响应时长
             this.effect = config.effect || 'flash' //效果
             this.title = config.title || document.title; //标题
