@@ -20,6 +20,7 @@
                 textColor: "#fff",
                 backgroundColor: "#2F9A00",
             }
+            this.audio = config.audio || '';
             this.favicon = document.querySelectorAll('link[rel~=shortcut]')[0]
             this.favicon = this.favicon;
             this.cloneFavicon = this.favicon.cloneNode(true);;
@@ -39,6 +40,16 @@
                     break;
             }
         },
+        player:function(){
+            if(!this.audio || !this.audio.file) return;
+            if(!this.audioElm){
+                this.audioElm = document.createElement('audio')
+                this.audioElm.src = this.audio.file
+                document.body.appendChild(this.audioElm)
+            }
+            this.audioElm.play();
+            return this
+        },
         //设置标题
         setTitle:function(str){
             if(str) {
@@ -53,6 +64,7 @@
         //设置时间间隔
         setInterval:function(num){
             if(num) this.interval = num,this.addTimer()
+            return this
         },
         //设置网页Icon
         setFavicon:function(num){
@@ -61,6 +73,7 @@
             if(this.favicon) this.favicon.remove();
             if(oldicon) oldicon.remove();
             changeFavicon(num,this.updateFavicon)
+            return this
         },
         //添加计数器
         addTimer:function(){
@@ -77,6 +90,7 @@
             newicon&&newicon.remove()
             head.appendChild(this.cloneFavicon);
             this.favicon = this.cloneFavicon
+            return this
         },
         //清除计数器
         clearTimer:function(){
@@ -85,6 +99,9 @@
             return this
         }
     };
+    function creatAuto (argument) {
+        // body...
+    }
     function changeFavicon(num,settings){
         var canvas = document.createElement('canvas'),
             img = document.createElement('img'),
