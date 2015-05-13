@@ -8,7 +8,18 @@
 </head>
 <body>
 <script type="text/javascript">
-
+var iN = iNotify.init({
+    effect: 'flash',
+    interval: 500,
+    message:"有消息拉！",
+    audio:{
+        file: 'msg.mp4'
+    },
+    notification:{
+        title:"通知！",
+        body:'您来了一条新消息'
+    }
+}).setFavicon(10).player();
 </script>
 </body>
 </html>
