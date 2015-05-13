@@ -7,8 +7,11 @@
         root.iNotify = factory();
     }
 }(this, function(root, undefined) {
-    var repeatableEffects = ['flash', 'scroll']
-    var iNotify = {
+    var repeatableEffects = ['flash', 'scroll'],iNotify,defaultNotification={
+                title:"通知！",
+                body:'您来了一条新消息'
+            },iconURL = "";
+    iNotify = {
         init:function(config){
             if(!config) config = {}
             this.interval = config.interval || 200//响应时长
@@ -23,7 +26,10 @@
             this.audio = config.audio || '';
             this.favicon = document.querySelectorAll('link[rel~=shortcut]')[0]
             this.favicon = this.favicon;
-            this.cloneFavicon = this.favicon.cloneNode(true);;
+            this.cloneFavicon = this.favicon.cloneNode(true);
+            defaultNotification.icon = iconURL = this.favicon.href;
+            this.notification = config.notification || defaultNotification;
+
             if ( 0 <= repeatableEffects.indexOf(this.effect)) this.addTimer()
             return this;
         },
@@ -59,6 +65,7 @@
             this.audioElm && (this.audioElm.loop = false,this.audioElm.pause())
             return this
         },
+        //播放声音
         player:function(){
             if(!this.audio || !this.audio.file) return;
             if(!this.audioElm){
@@ -69,6 +76,18 @@
             this.audioElm.play();
             return this
         },
+        notify:function(json){
+            var nt = this.notification;
+            if(Notification){
+                if(json) nt = jsonArguments(json,nt);
+                else nt = defaultNotification;
+                new Notification(nt.title, {
+                    icon: iconURL,
+                    body: nt.body
+                });
+            }
+            return this
+        },
         //设置标题
         setTitle:function(str){
             if(str) {
@@ -76,7 +95,6 @@
             }else {
                 this.clearTimer(),
                 this.title = this.title
-                console.log("this.title:",this.title)
             }
             return this
         },
@@ -141,7 +159,14 @@
         linkTag.setAttribute('id', 'new'+settings.id);
         linkTag.setAttribute('href', canvas.toDataURL('image/png'));
         head.appendChild(linkTag); 
+        iconURL = canvas.toDataURL('image/png')
     };
+    function jsonArguments (news,olds) {
+        for (var a in olds) if(news[a]) olds[a]=news[a];
+        return olds
+    }
+    //提醒是否添加chrome通知
+    if (Notification&&Notification.permission !== "granted") Notification.requestPermission();
     return iNotify
 }));
 
