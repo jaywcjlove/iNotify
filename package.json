@@ -1,6 +1,6 @@
 {
   "name": "title-notify",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.",
   "dependencies": {},
   "repository": {
