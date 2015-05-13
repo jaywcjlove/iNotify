@@ -42,9 +42,16 @@ iNotify.init({
         textColor: "#fff",
         //背景颜色，设置背景颜色透明，将值设置为“transparent”
         backgroundColor: "#2F9A00" 
+    },
+    //可选chrome浏览器通知，默认不填写就是下面的内容
+    notification:{
+        title:"通知！",//设置标题
+        icon:"",//设置图标 icon 默认为 Favicon
+        body:'您来了一条新消息'//设置消息内容
     }
 })
 ```
+
 ## 声音设置
 
 ### player
@@ -186,6 +193,25 @@ var iN = iNotify.init({
     message:"有消息拉！",
     audio:{
         file: 'msg.mp4'
+    }
+}).setFavicon(10).player();
+```
+
+
+### 实例五
+
+```js
+var iN = iNotify.init({
+    effect: 'flash',
+    interval: 500,
+    message:"有消息拉！",
+    audio:{
+        file: 'msg.mp4'
+    },
+    notification:{
+        title:"通知！",
+        icon:"",
+        body:'您来了一条新消息'
     }
 }).setFavicon(10).player();
 ```
