@@ -1,6 +1,8 @@
-# 标题通知
+# 通知
 
 [![](https://img.shields.io/github/issues/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/issues) [![](https://img.shields.io/github/forks/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/network) [![](https://img.shields.io/github/stars/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/stargazers) [![](https://img.shields.io/github/release/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/releases)
+
+JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome通知  
 
 这是重复造轮子...，标题闪烁、或者滚动提示，favicon数字显示。打开chrome浏览器调试工具，按照下面截图的方式放到调试里面调用一下，你就可以看到效果了。
 
@@ -82,7 +84,9 @@ iNotify.stopPlay()
 iNotify.setURL()
 ```
 
-## setTitle
+## title通知
+
+### setTitle
 设置标题  
 
 ```js
@@ -90,36 +94,54 @@ iNotify.setTitle('新标题')
 ```
 
 
-## setInterval
+### setInterval
 设置时间间隔  
 
 ```js
 iNotify.setInterval(2000)
 ```
-## addTimer
+
+### addTimer
 添加计数器
 
 ```js
 iNotify.addTimer()
 ```
-## clearTimer
+
+### clearTimer
 清除计数器  
 
 ```js
 iNotify.clearTimer()
 ```
 
-## setFavicon
+## favicon通知
+
+### setFavicon
 设置icon 显示数字
 
 ```js
 iNotify.setFavicon(10)
 ```
-## faviconClear
+
+### faviconClear
 清除数字显示原来的icon
 
 ```js
 iNotify.faviconClear()
+```
+
+## chrome通知
+
+### notify
+弹出chrome通知，不传参数为预设值...
+
+```js
+iNotify.notify(); 
+iNotify.notify({
+    title:"新通知"
+    body:"打雷啦，下雨啦..."
+});
 ```
 
 ## 其它
@@ -214,4 +236,12 @@ var iN = iNotify.init({
         body:'您来了一条新消息'
     }
 }).setFavicon(10).player();
+
+//弹出chrome通知，不传参数为预设值...
+iN.notify(); 
+
+iN.notify({
+    title:"新通知"
+    body:"打雷啦，下雨啦..."
+}); 
 ```
