@@ -1,7 +1,7 @@
 {
   "name": "title-notify",
-  "version": "1.0.4",
-  "description": "Show notification on title, And play sounds.",
+  "version": "1.0.5",
+  "description": "JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.",
   "dependencies": {},
   "repository": {
     "type": "git",
