@@ -123,8 +123,12 @@
         //清除Icon
         faviconClear:function(){
             var newicon = document.getElementById('new'+this.updateFavicon.id)
-                head = document.getElementsByTagName('head')[0]
+                head = document.getElementsByTagName('head')[0],
+                ficon = document.querySelectorAll('link[rel~=shortcut]')
             newicon&&newicon.remove()
+            if(ficon.length>0) for (var i = 0; i < ficon.length; i++) {
+                ficon[i].remove()
+            };
             head.appendChild(this.cloneFavicon);
             this.favicon = this.cloneFavicon
             return this
