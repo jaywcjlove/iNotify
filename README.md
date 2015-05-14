@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/github/issues/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/issues) [![](https://img.shields.io/github/forks/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/network) [![](https://img.shields.io/github/stars/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/stargazers) [![](https://img.shields.io/github/release/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/releases)
 
-JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome通知  
+JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome、Firefox、Safari等系统通知。
 
 这是重复造轮子...，标题闪烁、或者滚动提示，favicon数字显示。打开chrome浏览器调试工具，按照下面截图的方式放到调试里面调用一下，你就可以看到效果了。
 
