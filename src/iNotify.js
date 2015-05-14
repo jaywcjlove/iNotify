@@ -130,7 +130,8 @@
                 ficon[i].remove()
             };
             head.appendChild(this.cloneFavicon);
-            this.favicon = this.cloneFavicon
+            iconURL = this.cloneFavicon.href;
+            this.favicon = this.cloneFavicon;
             return this
         },
         //清除计数器
