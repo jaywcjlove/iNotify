@@ -49,10 +49,15 @@
         setURL:function(url){
             if(!this.audioElm){
                 url=url?this.audio.file=url:this.audio.file;
-                this.audioElm = document.createElement('audio')
-                document.body.appendChild(this.audioElm)
+                this.audioElm = createAudio(url);
+                document.body.appendChild(this.audioElm);
+            }else{
+                if(url){
+                    this.audioElm.remove()
+                    this.audioElm = createAudio(url);
+                    document.body.appendChild(this.audioElm);
+                }
             }
-            url && (this.audioElm.src = url);
             return this
         },
         loopPlay:function(){
@@ -70,17 +75,7 @@
             var adi = this.audio.file,source = null;
             if(!this.audio || !this.audio.file) return;
             if(!this.audioElm){
-                this.audioElm = document.createElement('audio')
-                if(isArray(adi) && adi.length>0){
-                    for (var i = 0; i < adi.length; i++) {
-                        source = document.createElement('source')
-                        source.src = adi[i]
-                        source.type = 'audio/'+ getExtension(adi[i])
-                        this.audioElm.appendChild(source)
-                    }
-                }else{
-                    this.audioElm.src = this.audio.file
-                }
+                this.audioElm = createAudio(this.audio.file);
                 document.body.appendChild(this.audioElm)
             }
             this.audioElm.play();
@@ -151,6 +146,20 @@
             return this
         }
     };
+    function createAudio(url){
+        var audioElm = document.createElement('audio')
+        if(isArray(url) && url.length>0){
+            for (var i = 0; i < url.length; i++) {
+                source = document.createElement('source')
+                source.src = url[i]
+                source.type = 'audio/'+ getExtension(url[i])
+                audioElm.appendChild(source)
+            }
+        }else{
+            audioElm.src = url
+        }
+        return audioElm
+    }
     function isArray(value) { return value instanceof Array }
     function changeFavicon(num,settings){
         var canvas = document.createElement('canvas'),
