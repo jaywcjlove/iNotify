@@ -178,11 +178,7 @@
         iconURL = canvas.toDataURL('image/png')
     };
     //获取文件后缀
-    function getExtension (file_name) {
-        var e = /\.[^\.]+$/.exec(file_name)
-            e = e[0].replace('.','')
-        return e
-    }
+    function getExtension (file_name) { return file_name.match(/\.([^\.]+)$/)[1];}
     function jsonArguments (news,olds) {
         for (var a in olds) if(news[a]) olds[a]=news[a];
         return olds
