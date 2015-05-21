@@ -84,7 +84,8 @@ iNotify.stopPlay()
 设置播放声音URL
 
 ```js
-iNotify.setURL()
+iNotify.setURL('msg.mp3')// 设置一个
+iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // 设置多个
 ```
 
 ## title通知
