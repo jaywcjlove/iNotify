@@ -67,10 +67,20 @@
         },
         //播放声音
         player:function(){
+            var adi = this.audio.file,source = null;
             if(!this.audio || !this.audio.file) return;
             if(!this.audioElm){
                 this.audioElm = document.createElement('audio')
-                this.audioElm.src = this.audio.file
+                if(isArray(adi) && adi.length>0){
+                    for (var i = 0; i < adi.length; i++) {
+                        source = document.createElement('source')
+                        source.src = adi[i]
+                        source.type = 'audio/'+ getExtension(adi[i])
+                        this.audioElm.appendChild(source)
+                    }
+                }else{
+                    this.audioElm.src = this.audio.file
+                }
                 document.body.appendChild(this.audioElm)
             }
             this.audioElm.play();
@@ -141,6 +151,7 @@
             return this
         }
     };
+    function isArray(value) { return value instanceof Array }
     function changeFavicon(num,settings){
         var canvas = document.createElement('canvas'),
             img = document.createElement('img'),
@@ -166,6 +177,12 @@
         head.appendChild(linkTag); 
         iconURL = canvas.toDataURL('image/png')
     };
+    //获取文件后缀
+    function getExtension (file_name) {
+        var e = /\.[^\.]+$/.exec(file_name)
+            e = e[0].replace('.','')
+        return e
+    }
     function jsonArguments (news,olds) {
         for (var a in olds) if(news[a]) olds[a]=news[a];
         return olds
