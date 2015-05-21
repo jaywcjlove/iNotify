@@ -160,7 +160,7 @@
         }
         return audioElm
     }
-    function isArray(value) { return value instanceof Array }
+    function isArray(value) { return Object.prototype.toString.call(value) === '[object Array]';}
     function changeFavicon(num,settings){
         var canvas = document.createElement('canvas'),
             img = document.createElement('img'),
