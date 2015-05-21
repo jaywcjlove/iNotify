@@ -34,7 +34,10 @@ iNotify.init({
     effect: 'flash', // flash | scroll 闪烁还是滚动
     //可选播放声音
     audio:{
-        file: 'msg.mp4'
+        //可以使用数组传多种格式的声音文件
+        file: ['msg.mp4','msg.mp3','msg.wav']
+        //下面也是可以的哦
+        //file: 'msg.mp4'
     },
     //标题闪烁，或者滚动速度
     interval: 1000,
@@ -228,7 +231,7 @@ var iN = iNotify.init({
     interval: 500,
     message:"有消息拉！",
     audio:{
-        file: 'msg.mp4'
+        file: 'msg.mp4'//可以使用数组传多种格式的声音文件
     },
     notification:{
         title:"通知！",
