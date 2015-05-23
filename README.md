@@ -57,6 +57,13 @@ iNotify.init({
 })
 ```
 
+## isPermission
+判断浏览器弹框通知是否被阻止。
+
+```js
+iNotify.isPermission()
+```
+
 ## 声音设置
 
 ### player

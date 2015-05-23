@@ -83,7 +83,7 @@
         },
         notify:function(json){
             var nt = this.notification;
-            if(Notification){
+            if(window.Notification){
                 if(json) nt = jsonArguments(json,nt);
                 else nt = defaultNotification;
                 new Notification(nt.title, {
@@ -92,6 +92,10 @@
                 });
             }
             return this
+        },
+        //是否许可弹框通知
+        isPermission:function(){
+            return window.Notification && Notification.permission === "granted" ? true : false ;
         },
         //设置标题
         setTitle:function(str){
@@ -193,7 +197,7 @@
         return olds
     }
     //提醒是否添加chrome通知
-    if (Notification&&Notification.permission !== "granted") Notification.requestPermission();
+    if (window.Notification&&window.Notification.permission !== "granted") window.Notification.requestPermission();
     return iNotify
 }));
 
