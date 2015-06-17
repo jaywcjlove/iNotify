@@ -21,7 +21,7 @@
             this.updateFavicon = config.updateFavicon || {
                 id: "favicon",
                 textColor: "#fff",
-                backgroundColor: "#2F9A00",
+                backgroundColor: "#2F9A00"
             }
             this.audio = config.audio || '';
             this.favicon = document.querySelectorAll('link[rel~=shortcut]')[0]
