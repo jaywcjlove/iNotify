@@ -252,7 +252,7 @@ var iN = iNotify.init({
 iN.notify(); 
 
 iN.notify({
-    title:"新通知"
+    title:"新通知",
     body:"打雷啦，下雨啦..."
 }); 
 ```
