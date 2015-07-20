@@ -11,7 +11,11 @@
                 title:"通知！",
                 body:'您来了一条新消息'
             },iconURL = "";
-    iNotify = {
+
+    function iNotify(config){
+        if(config) this.init(config);
+    }
+    iNotify.prototype = {
         init:function(config){
             if(!config) config = {}
             this.interval = config.interval || 200//响应时长
@@ -47,16 +51,10 @@
             }
         },
         setURL:function(url){
-            if(!this.audioElm){
-                url=url?this.audio.file=url:this.audio.file;
+            if(url){
+                if(this.audioElm) this.audioElm.remove();
                 this.audioElm = createAudio(url);
                 document.body.appendChild(this.audioElm);
-            }else{
-                if(url){
-                    this.audioElm.remove()
-                    this.audioElm = createAudio(url);
-                    document.body.appendChild(this.audioElm);
-                }
             }
             return this
         },
