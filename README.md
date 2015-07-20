@@ -162,13 +162,29 @@ iNotify.notify({
 
 ## 例子
 
+```js
+new iNotify({
+    effect: 'flash',
+    interval: 500
+})
+```
+
+上面的例子跟下面的是一样的
+
+```js
+new iNotify().init({
+    effect: 'flash',
+    interval: 500
+});
+```
+
 
 ### 实例一
 
 ```js
 function iconNotify(num){
     if(!notify) {
-        var notify = iNotify.init({
+        var notify = new iNotify().init({
             effect: 'flash',
             interval: 500
         });
@@ -189,7 +205,7 @@ function iconNotify(num){
 ### 实例二
 
 ```js
-var notify = iNotify.init({
+var notify = new iNotify().init({
     effect: 'flash',
     interval: 500
 });
@@ -199,7 +215,7 @@ notify.setFavicon("1")
 ### 实例三
 
 ```js
-var iN = iNotify.init({
+var iN = new iNotify().init({
     effect: 'flash',
     interval: 500,
     message:"有消息拉！",
@@ -213,14 +229,14 @@ var iN = iNotify.init({
 ### 实例四
 
 ```js
-var iN = iNotify.init().setFavicon(5);
+var iN = new iNotify().init().setFavicon(5);
 ```
 
 
 ### 实例五
 
 ```js
-var iN = iNotify.init({
+var iN = new iNotify().init({
     effect: 'flash',
     interval: 500,
     message:"有消息拉！",
@@ -234,7 +250,7 @@ var iN = iNotify.init({
 ### 实例五
 
 ```js
-var iN = iNotify.init({
+var iN = new iNotify().init({
     effect: 'flash',
     interval: 500,
     message:"有消息拉！",
@@ -255,4 +271,40 @@ iN.notify({
     title:"新通知",
     body:"打雷啦，下雨啦..."
 }); 
+```
+
+### 实例六
+
+```js
+var iN =  new iNotify({
+    effect: 'flash',
+    interval: 500,
+    message:"有消息拉！",
+    audio:{
+        file: ['msg.mp4','msg.mp3','msg.wav']
+    },
+    notification:{
+        title:"通知！",
+        body:'您来了一条新消息'
+    }
+})
+
+
+iN.setFavicon(10).player();
+
+var n = new iNotify()
+n.init({
+    effect: 'flash',
+    interval: 500,
+    message:"有消息拉！",
+    audio:{
+        file: ['openSub.mp4','openSub.mp3','openSub.wav']
+    },
+    notification:{
+        title:"通知！",
+        body:'您来了一个客户'
+    }
+})
+
+n.setFavicon(10).player();
 ```
