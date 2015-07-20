@@ -33,7 +33,8 @@
             this.cloneFavicon = this.favicon.cloneNode(true);
             defaultNotification.icon = iconURL = this.favicon.href;
             this.notification = config.notification || defaultNotification;
-
+            //初始化生成声音文件节点
+            if(this.audio && this.audio.file) this.setURL(this.audio.file);
             if ( 0 <= repeatableEffects.indexOf(this.effect)) this.addTimer()
             return this;
         },
