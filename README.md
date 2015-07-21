@@ -96,12 +96,15 @@ iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // 设置多个
 ```
 
 ## title通知
+最新的版本默认不播放标题闪烁动画，初始化之后需要调用 `setTitle(true)` 方法才播放标题动画。
 
 ### setTitle
-设置标题  
+设置标题，
 
 ```js
-iNotify.setTitle('新标题')
+iNotify.setTitle(true)//播放动画
+iNotify.setTitle('新标题')//闪烁新标题
+iNotify.setTitle()//清除闪烁 显示原来的标题
 ```
 
 
