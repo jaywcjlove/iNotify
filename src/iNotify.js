@@ -35,7 +35,6 @@
             this.notification = config.notification || defaultNotification;
             //初始化生成声音文件节点
             if(this.audio && this.audio.file) this.setURL(this.audio.file);
-            if ( 0 <= repeatableEffects.indexOf(this.effect)) this.addTimer()
             return this;
         },
         render: function() {
@@ -98,9 +97,11 @@
         },
         //设置标题
         setTitle:function(str){
-            if(str) {
+            if(str === true){
+                if ( 0 <= repeatableEffects.indexOf(this.effect)) return this.addTimer(); 
+            }else if(str) {
                 this.message = str,this.addTimer()
-            }else {
+            }else{
                 this.clearTimer(),
                 this.title = this.title
             }
