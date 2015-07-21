@@ -8,10 +8,10 @@
 </head>
 <body>
 <script type="text/javascript">
-var iN = new iNotify().init({
+var iN = new iNotify({
     effect: 'flash',
     interval: 500,
-    message:"有消息拉！",
+    message:"有消息拉！2",
     audio:{
         file: ['msg.mp4','msg.mp3','msg.wav']
     },
@@ -19,7 +19,10 @@ var iN = new iNotify().init({
         title:"通知！",
         body:'您来了一条新消息'
     }
-}).setFavicon(10).player();
+});
+
+iN.setTitle(true).player();
+
 </script>
 </body>
 </html>
