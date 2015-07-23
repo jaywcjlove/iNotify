@@ -29,7 +29,9 @@ $ bower install inotify
 effect: flash | scroll | favicon  
 
 ```js 
-iNotify.init({
+var iNotify = new iNotify().init()
+//推荐下面写法
+var iNotify = new iNotify({
     message: '有消息了。',//标题
     effect: 'flash', // flash | scroll 闪烁还是滚动
     //可选播放声音
