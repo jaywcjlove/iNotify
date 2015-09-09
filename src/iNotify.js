@@ -151,7 +151,7 @@
         }
     };
     function createAudio(url){
-        var audioElm = document.createElement('audio')
+        var audioElm = document.createElement('audio'),source;
         if(isArray(url) && url.length>0){
             for (var i = 0; i < url.length; i++) {
                 source = document.createElement('source')
