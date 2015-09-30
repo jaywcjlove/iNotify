@@ -1,22 +1,21 @@
 {
-    "name": "title-notify",
-    "version": "1.0.0",
-    "description": "Show notification on title title",
-    "dependencies": {},
+    "name": "iNotify",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": [
+        ""
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "jaywcjlove <398188662@qq.com>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jaywcjlove/iNotify.git"
+        "url": ""
     },
-    "keywords": [
-        "iNotify",
-        "front-end",
-        "title",
-        "notification"
-    ],
-    "author": "kenny wang",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jaywcjlove/iNotify/issues"
-    },
-    "homepage": "https://github.com/jaywcjlove/iNotify"
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+            "首页.md"
+        ]
+    }
 }
