@@ -28,7 +28,7 @@
                 backgroundColor: "#2F9A00"
             }
             this.audio = config.audio || '';
-            this.favicon = document.querySelectorAll('link[rel~=shortcut]')[0]
+            this.favicon = getFavicon(this.updateFavicon)
             this.favicon = this.favicon;
             this.cloneFavicon = this.favicon.cloneNode(true);
             defaultNotification.icon = iconURL = this.favicon.href;
@@ -150,6 +150,12 @@
             return this
         }
     };
+    // 获取 favicon
+    function getFavicon(setting){
+        var ic = document.querySelectorAll('link[rel~=shortcut]')[0];
+        if(!ic) ic = changeFavicon('O',setting);
+        return ic;
+    }
     function createAudio(url){
         var audioElm = document.createElement('audio'),source;
         if(isArray(url) && url.length>0){
@@ -187,8 +193,8 @@
         linkTag.setAttribute('type','image/x-icon');
         linkTag.setAttribute('id', 'new'+settings.id);
         linkTag.setAttribute('href', canvas.toDataURL('image/png'));
-        head.appendChild(linkTag); 
-        iconURL = canvas.toDataURL('image/png')
+        iconURL = canvas.toDataURL('image/png');
+        return head.appendChild(linkTag); 
     };
     //获取文件后缀
     function getExtension (file_name) { return file_name.match(/\.([^\.]+)$/)[1];}
