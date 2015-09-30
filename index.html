@@ -11,6 +11,8 @@
 <ul><li class="active"><a href="index.html">首页</a></li></ul></div>
 
 
+<div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/iNotify"></a></div>
+
 <div class="warpper">
 
     <div class="page-toc">
@@ -26,8 +28,54 @@
 <h1 id="&#x6D4B;&#x8BD5;&#x4F8B;&#x5B50;">&#x6D4B;&#x8BD5;&#x4F8B;&#x5B50; <a href="#&#x6D4B;&#x8BD5;&#x4F8B;&#x5B50;"> # </a></h1>
 <script type="text/javascript" src="https://rawgit.com/jaywcjlove/iNotify/master/src/iNotify.js"></script>
 
+<p><a href="javascript:inotifyTest()">&#x8BF7;&#x70B9;&#x51FB;&#x6211;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF01;</a></p>
+<script type="text/javascript">
+var iN = new iNotify({
+    effect: 'flash',
+    interval: 500,
+    message:"有消息拉！2",
+    audio:{
+        file: ['msg.mp4','msg.mp3','msg.wav']
+    },
+    notification:{
+        title:"通知！",
+        body:'您来了一条新消息'
+    }
+});
 
+function inotifyTest(){
+    iN.setFavicon(10).setTitle('新标题').notify({
+        title:"新通知",
+        body:"打雷啦，下雨啦..."
+    })
+}
+</script>
 
+<p>&#x4E0B;&#x9762; audio.file &#x91CC;&#x9762;&#x7684;&#x58F0;&#x97F3;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x60A8;&#x5F15;&#x7528;&#x6709;&#x6548;&#x58F0;&#x97F3;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://rawgit.com/jaywcjlove/iNotify/master/src/iNotify.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:inotifyTest()&quot;</span>&gt;</span>&#x8BF7;&#x70B9;&#x51FB;&#x6211;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF01;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="actionscript">
+<span class="hljs-keyword">var</span> iN = <span class="hljs-keyword">new</span> iNotify({
+    effect: <span class="hljs-string">&apos;flash&apos;</span>,
+    interval: <span class="hljs-number">500</span>,
+    message:<span class="hljs-string">&quot;&#x6709;&#x6D88;&#x606F;&#x62C9;&#xFF01;2&quot;</span>,
+    audio:{
+        file: [<span class="hljs-string">&apos;msg.mp4&apos;</span>,<span class="hljs-string">&apos;msg.mp3&apos;</span>,<span class="hljs-string">&apos;msg.wav&apos;</span>]
+    },
+    notification:{
+        title:<span class="hljs-string">&quot;&#x901A;&#x77E5;&#xFF01;&quot;</span>,
+        body:<span class="hljs-string">&apos;&#x60A8;&#x6765;&#x4E86;&#x4E00;&#x6761;&#x65B0;&#x6D88;&#x606F;&apos;</span>
+    }
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inotifyTest</span><span class="hljs-params">()</span></span>{
+    iN.setFavicon(<span class="hljs-number">10</span>).setTitle(<span class="hljs-string">&apos;&#x65B0;&#x6807;&#x9898;&apos;</span>).notify({
+        title:<span class="hljs-string">&quot;&#x65B0;&#x901A;&#x77E5;&quot;</span>,
+        body:<span class="hljs-string">&quot;&#x6253;&#x96F7;&#x5566;&#xFF0C;&#x4E0B;&#x96E8;&#x5566;...&quot;</span>
+    })
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
 <h1 id="&#x4E0B;&#x8F7D;">&#x4E0B;&#x8F7D; <a href="#&#x4E0B;&#x8F7D;"> # </a></h1>
 <h2 id="npm">npm <a href="#npm"> # </a></h2>
 <pre><code>$ npm install title-notify
