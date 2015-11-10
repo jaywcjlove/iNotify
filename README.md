@@ -11,17 +11,18 @@ JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome、Firefox、
 
 ## 下载
 
-### npm
-
 ```
-$ npm install title-notify
+$ npm install title-notify --save-dev
+$ bower install inotify --save-dev
 ```
 
+## 编译 
 
-### bower
-
-```
-$ bower install inotify
+```bash
+# 下载依赖工具
+$ npm install 
+# 压缩inotify
+$ npm build
 ```
 
 ## init
