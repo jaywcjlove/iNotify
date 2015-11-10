@@ -2,6 +2,7 @@ var gulp = require('gulp');
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename')
     watch = require('gulp-watch')
+    gutil = require('gulp-util')
 
 //默认执行default任务，并执行监听任务
 gulp.task('default', ['watch'], function() { 
@@ -17,6 +18,7 @@ gulp.task('watch', function () {
 gulp.task('build', function() { 
     gulp.src('./src/iNotify.js')
         .pipe(uglify())
+        .on('error',gutil.log)//这里捕获错误
         .pipe(rename({
             extname:'.min.js'
         }))
