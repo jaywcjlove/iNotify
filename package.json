@@ -1,6 +1,6 @@
 {
   "name": "title-notify",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.",
   "main": "src/iNotify.js",
   "repository": {
