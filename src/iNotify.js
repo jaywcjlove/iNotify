@@ -1,11 +1,7 @@
 ;(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define([], factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory();
-    } else {
-        root.iNotify = factory();
-    }
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (root.iNotify = factory());
 }(this, function(root, undefined) {
     var repeatableEffects = ['flash', 'scroll'],iNotify,defaultNotification={
                 title:"通知！",
