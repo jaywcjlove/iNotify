@@ -35,6 +35,10 @@ var iNotify = new iNotify().init()
 var iNotify = new iNotify({
     message: '有消息了。',//标题
     effect: 'flash', // flash | scroll 闪烁还是滚动
+    openurl:"http://www.bing.com", // 点击弹窗打开连接地址
+    onclick:function(){ //点击弹出的窗之行事件
+       console.log("---")
+    },
     //可选播放声音
     audio:{
         //可以使用数组传多种格式的声音文件
@@ -157,7 +161,11 @@ iNotify.faviconClear()
 iNotify.notify(); 
 iNotify.notify({
     title:"新通知",
-    body:"打雷啦，下雨啦..."
+    body:"打雷啦，下雨啦...",
+    openurl:"http://www.bing.com",
+    onclick:function(){
+       console.log("---")
+    }
 });
 ```
 
