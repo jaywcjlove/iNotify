@@ -5,7 +5,8 @@
 }(this, function(root, undefined) {
     var repeatableEffects = ['flash', 'scroll'],iNotify,defaultNotification={
                 title:"通知！",
-                body:'您来了一条新消息'
+                body:'您来了一条新消息',
+                openurl:''
             },iconURL = "";
 
     function iNotify(config){
@@ -18,6 +19,8 @@
             this.effect = config.effect || 'flash' //效果
             this.title = config.title || document.title; //标题
             this.message = config.message || this.title; //原来的标题
+            this.onclick = config.onclick || this.onclick; //点击事件
+            this.openurl = config.openurl || this.openurl; //点击事件
             this.updateFavicon = config.updateFavicon || {
                 id: "favicon",
                 textColor: "#fff",
@@ -77,13 +80,18 @@
         },
         notify:function(json){
             var nt = this.notification;
+            var url = json.openurl?json.openurl:this.openurl;
             if(window.Notification){
                 if(json) nt = jsonArguments(json,nt);
                 else nt = defaultNotification;
-                new Notification(nt.title, {
+                var n = new Notification(nt.title, {
                     icon: iconURL,
                     body: nt.body
                 });
+                n.onclick = function(){
+                    json.onclick&&json.onclick();
+                    url&&window.open(url);
+                }
             }
             return this
         },
