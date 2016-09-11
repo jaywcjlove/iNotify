@@ -81,6 +81,7 @@
         notify:function(json){
             var nt = this.notification;
             var url = json.openurl?json.openurl:this.openurl;
+            var onclick = json.onclick?json.onclick:this.onclick
             if(window.Notification){
                 if(json) nt = jsonArguments(json,nt);
                 else nt = defaultNotification;
@@ -89,7 +90,7 @@
                     body: nt.body
                 });
                 n.onclick = function(){
-                    json.onclick&&json.onclick();
+                    onclick&&onclick();
                     url&&window.open(url);
                 }
             }
