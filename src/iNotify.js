@@ -30,7 +30,7 @@
             this.favicon = getFavicon(this.updateFavicon)
             this.favicon = this.favicon;
             this.cloneFavicon = this.favicon.cloneNode(true);
-            defaultNotification.icon = iconURL = this.favicon.href;
+            defaultNotification.icon = iconURL = (config.notification &&config.notification.icon)? config.notification.icon : (config.icon?config.icon:this.favicon.href);
             this.notification = config.notification || defaultNotification;
             //初始化生成声音文件节点
             if(this.audio && this.audio.file) this.setURL(this.audio.file);
@@ -86,7 +86,7 @@
                 if(json) nt = jsonArguments(json,nt);
                 else nt = defaultNotification;
                 var n = new Notification(nt.title, {
-                    icon: iconURL,
+                    icon: json.icon?json.icon:iconURL,
                     body: nt.body
                 });
                 n.onclick = function(){
