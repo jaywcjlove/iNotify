@@ -8,14 +8,18 @@
     "url": "https://github.com/jaywcjlove/iNotify.git"
   },
   "keywords": [
-    "inotify"
+    "inotify",
+    "notify",
+    "alert",
+    "notice",
+    "notification"
   ],
   "author": "kenny wang",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jaywcjlove/iNotify/issues"
   },
-  "homepage": "https://github.com/jaywcjlove/iNotify",
+  "homepage": "http://jaywcjlove.github.io/iNotify",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-rename": "^1.2.2",
