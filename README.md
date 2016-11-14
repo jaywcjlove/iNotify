@@ -316,6 +316,7 @@ n.init({
     },
     notification:{
         title:"通知！",
+        icon:"",
         body:'您来了一个客户'
     }
 })
