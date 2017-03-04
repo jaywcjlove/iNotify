@@ -107,6 +107,7 @@
                         body : nt.body
                     });
                 n.onclick = function () {
+                    (onclick && typeof(onclick) === "function") && onclick(n);
                     url && window.open(url);
                 }
             }
