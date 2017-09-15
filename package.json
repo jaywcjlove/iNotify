@@ -20,6 +20,10 @@
     "url": "https://github.com/jaywcjlove/iNotify/issues"
   },
   "homepage": "http://jaywcjlove.github.io/iNotify",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-rename": "^1.2.2",
