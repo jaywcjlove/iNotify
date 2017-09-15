@@ -4,7 +4,6 @@
         (root.iNotify = factory());
 }(this, function (root, undefined) {
     var repeatableEffects = ['flash', 'scroll'],
-    iNotify,
     defaultNotification = {
         title : "通知！",
         body : '您来了一条新消息',
