@@ -1,8 +1,10 @@
 var gulp = require('gulp');
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename')
-    watch = require('gulp-watch')
-    gutil = require('gulp-util')
+var uglify = require('gulp-uglify')
+var rename = require('gulp-rename')
+var watch = require('gulp-watch')
+var gutil = require('gulp-util')
+var banner = require('gulp-banner');
+var bannerjs = require('bannerjs');
 
 //默认执行default任务，并执行监听任务
 gulp.task('default', ['watch'], function() { 
@@ -22,5 +24,6 @@ gulp.task('build', function() {
         .pipe(rename({
             extname:'.min.js'
         }))
+        .pipe(banner(bannerjs.multibanner()))
         .pipe(gulp.dest('./build/'));
 });
