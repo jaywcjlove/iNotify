@@ -11,11 +11,17 @@
         "type": "git",
         "url": "https://github.com/jaywcjlove/iNotify"
     },
-    "licenses": "MIT",
+    "license": "MIT",
     "idoc": {
         "theme": "default",
         "md": [
             "首页.md"
         ]
+    },
+    "scripts": {
+      "start": "idoc -b"
+    },
+    "dependencies": {
+        "idoc": "^0.3.0"
     }
 }
