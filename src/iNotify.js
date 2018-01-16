@@ -101,13 +101,23 @@
                 } else {
                     nt = defaultNotification;
                 }
-                var n = new Notification(nt.title, {
-                        icon : json.icon ? json.icon : iconURL,
-                        body : nt.body
-                    });
+                var option = {};
+                option.icon = json.icon ? json.icon : iconURL;
+                option.body = nt.body;
+                if (json.dir) option.dir = json.dir;
+                var n = new Notification(nt.title, option);
                 n.onclick = function () {
-                    (onclick && typeof(onclick) === "function") && onclick(n);
+                    (onclick && typeof onclick === "function") && onclick(n);
                     url && window.open(url);
+                }
+                n.onshow = function () {
+                    (json.onshow && typeof json.onshow === "function") && json.onshow(n);
+                }
+                n.onclose = function () {
+                    (json.onclose && typeof json.onclose === "function") && json.onclose(n);
+                }
+                n.onerror = function () {
+                    (json.onerror && typeof json.onerror === "function") && json.onerror(n);
                 }
             }
             return this;

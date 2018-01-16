@@ -10,12 +10,13 @@
 <script type="text/javascript">
 var iN = new iNotify({
     effect: 'flash',
-    interval: 500,
+    interval: 0,
     message:"有消息拉！2",
     audio:{
         file: ['msg.mp4','msg.mp3','msg.wav']
     },
     notification:{
+        interval: false,
         title:"通知！",
         body:'您来了一条新消息'
     }
