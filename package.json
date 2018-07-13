@@ -1,8 +1,9 @@
 {
-  "name": "title-notify",
-  "version": "1.1.0",
+  "name": "@wcjiang/notify",
+  "version": "2.0.2",
   "description": "JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.",
-  "main": "src/iNotify.js",
+  "main": "index.js",
+  "module": "dist/notify.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jaywcjlove/iNotify.git"
@@ -21,16 +22,49 @@
   },
   "homepage": "http://jaywcjlove.github.io/iNotify",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
+    "build": "node scripts/build.js",
+    "watch": "node scripts/watch.js",
+    "deploy": "npm run doc:build && gh-pages -d build",
+    "doc": "npm run doc:dev",
+    "doc:dev": "NODE_ENV=development parcel website/index.html --out-dir build/ --no-cache",
+    "doc:build": "NODE_ENV=production parcel build website/index.html --out-dir build/ --public-url ./ --no-cache"
   },
   "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "bannerjs": "^1.0.5",
-    "gulp": "^3.8.11",
-    "gulp-banner": "^0.1.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.2.4"
-  }
+    "classnames": "^2.2.6",
+    "colors-cli": "^1.0.17",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "gh-pages": "^1.2.0",
+    "highlight.js": "^9.12.0",
+    "less": "^3.7.1",
+    "parcel-bundler": "^1.9.6",
+    "parcel-plugin-markdown-string": "^1.3.2",
+    "postcss-modules": "^1.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-markdown": "^3.3.4",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "uglify-js": "^3.4.4",
+    "zlib": "^1.0.5"
+  },
+  "dependencies": {}
 }

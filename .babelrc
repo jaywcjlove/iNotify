@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "stage-0",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie >= 10"
+          ]
+        }
+      }
+    ],
+    "react"
+  ]
+}
