@@ -4,7 +4,7 @@
   display: inline-block;
   border: 1px solid #ddd;
   border-bottom-color: #bbb;
-  padding: 9px 15px;
+  padding: 6px 14px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -15,14 +15,22 @@
   cursor: pointer;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  outline: 0;
   background: whitesmoke;
-  background-image: linear-gradient(-90deg, whitesmoke 0%, #e5e5e5 100%);
+  background-image: linear-gradient(0deg, #e5e5e5 0%, whitesmoke 100%);
   &:hover {
     color: #337797;
     border: 1px solid #CBE3EE;
     border-bottom-color: #97C7DD;
     background: #f0f7fa;
-    background-image: -webkit-linear-gradient(-90deg, #f0f7fa 0%, #d8eaf2 100%);
+    background-image: linear-gradient(0deg, #d8eaf2 0%, #f0f7fa 100%);
+  }
+  &:active {
+    background: #f0f7fa;
+    background-image: linear-gradient(0deg, #cccccc 0%, #cacaca 100%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.46);
   }
   + button {
     margin-left: 10px;
