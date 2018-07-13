@@ -60,14 +60,26 @@ export default class App extends Component {
         {
           label: '消息数',
           onClick: () => {
-            this.iN.faviconClear();
-            this.iN.setFavicon(Math.floor(Math.random() * 10));
+            const num = Math.floor(Math.random() * 10) || 2;
+            this.iN.faviconClear().setFavicon(num + 1);
           },
         },
         {
           label: '清空消息数',
           onClick: () => {
             this.iN.faviconClear();
+          },
+        },
+        {
+          label: 'Favicon 字体颜色',
+          onClick: () => {
+            this.iN.setFaviconColor('#0043ff');
+          },
+        },
+        {
+          label: 'Favicon 背景颜色',
+          onClick: () => {
+            this.iN.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
           },
         },
       ],

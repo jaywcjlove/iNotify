@@ -1,5 +1,5 @@
 /*!
- * @wcjiang/notify v2.0.3
+ * title-notify v1.1.0
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
  * 
  * Copyright (c) 2018 kenny wang
@@ -11,7 +11,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.Notify = factory());
+  (global.notify = factory());
 }(this, (function () { 'use strict';
 
   // 提醒是否添加chrome通知
@@ -69,7 +69,6 @@
 
   function changeFavicon(num, settings) {
     var canvas = document.createElement('canvas');
-    // const img = document.createElement('img');
     var head = document.getElementsByTagName('head')[0];
     var linkTag = document.createElement('link');
     var ctx = null;
@@ -83,12 +82,12 @@
     ctx.textAlign = 'center';
     ctx.font = '22px "helvetica", sans-serif';
     ctx.fillStyle = settings.textColor;
-    ctx.fillText(num, 16, 24);
+    num && ctx.fillText(num, 16, 24);
 
     // 生成到
     linkTag.setAttribute('rel', 'shortcut icon');
     linkTag.setAttribute('type', 'image/x-icon');
-    linkTag.setAttribute('id', 'new ' + settings.id);
+    linkTag.setAttribute('id', 'new' + settings.id);
     linkTag.setAttribute('href', canvas.toDataURL('image/png'));
     iconURL = canvas.toDataURL('image/png');
     return head.appendChild(linkTag);
@@ -249,8 +248,39 @@
       if (oldicon) {
         oldicon.remove();
       }
+      this.updateFavicon.num = num;
       changeFavicon(num, this.updateFavicon);
       return this;
+    },
+
+    // 设置 Favicon 文字颜色
+    setFaviconColor: function setFaviconColor(color) {
+      if (color) {
+        this.faviconRemove();
+        this.updateFavicon.textColor = color;
+        changeFavicon(this.updateFavicon.num, this.updateFavicon);
+      }
+      return this;
+    },
+
+    // 设置 Favicon 背景颜色
+    setFaviconBackgroundColor: function setFaviconBackgroundColor(color) {
+      if (color) {
+        this.faviconRemove();
+        this.updateFavicon.backgroundColor = color;
+        changeFavicon(this.updateFavicon.num, this.updateFavicon);
+      }
+      return this;
+    },
+    faviconRemove: function faviconRemove() {
+      this.faviconClear();
+      var oldicon = document.getElementById('new' + this.updateFavicon.id);
+      if (this.favicon) {
+        this.favicon.remove();
+      }
+      if (oldicon) {
+        oldicon.remove();
+      }
     },
 
     // 添加计数器

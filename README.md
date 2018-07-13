@@ -170,10 +170,28 @@ iNotify.clearTimer()
 
 ### setFavicon
 
-设置icon 显示数字
+设置 icon 显示数字或者文本
 
 ```js
 iNotify.setFavicon(10)
+```
+
+### setFaviconColor
+
+设置 icon 显示文本颜色
+
+```js
+iNotify.setFaviconColor('#0043ff')
+```
+
+### setFaviconBackgroundColor
+
+设置 icon 显示文本颜色
+
+```js
+iNotify.setFaviconBackgroundColor('#0043ff')
+// 设置字体和背景颜色
+iNotify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
 ```
 
 ### faviconClear
