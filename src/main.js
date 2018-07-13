@@ -206,7 +206,6 @@ Notify.prototype = {
       this.addTimer();
     } else {
       this.clearTimer();
-      this.title = str;
     }
     return this;
   },
