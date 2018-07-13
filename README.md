@@ -2,9 +2,9 @@
 
 [![](https://img.shields.io/github/issues/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/issues) [![](https://img.shields.io/github/forks/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/network) [![](https://img.shields.io/github/stars/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/stargazers) [![](https://img.shields.io/github/release/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/releases)
 
-JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome、Firefox、Safari等系统通知。它没有依赖，压缩只有只有4.66kb(gzipped: 1.70kb)。
+JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome、Firefox、Safari等系统通知。它没有依赖，压缩只有只有4.66kb(gzipped: 1.70kb)，Official document [demo preview](http://jaywcjlove.github.io/iNotify)。
 
-![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/iNotify.png?raw=true)
+[![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/iNotify.png?raw=true)](http://jaywcjlove.github.io/iNotify)
 
 ## 下载
 
