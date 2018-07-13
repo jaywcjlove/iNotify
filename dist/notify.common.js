@@ -1,5 +1,5 @@
 /*!
- * title-notify v1.1.0
+ * @wcjiang/notify v2.0.4
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
  * 
  * Copyright (c) 2018 kenny wang
