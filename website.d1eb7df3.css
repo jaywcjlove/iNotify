@@ -372,12 +372,12 @@ a._corner_1qg4o_1:hover ._octo-arm_1qg4o_17 {
 ._shields_1ds1m_1 a + a {
   margin-left: 10px;
 }
-._button_14jww_1 {
+._button_14o1f_1 {
   position: relative;
   display: inline-block;
   border: 1px solid #ddd;
   border-bottom-color: #bbb;
-  padding: 9px 15px;
+  padding: 6px 14px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -388,17 +388,25 @@ a._corner_1qg4o_1:hover ._octo-arm_1qg4o_17 {
   cursor: pointer;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  outline: 0;
   background: whitesmoke;
-  background-image: linear-gradient(-90deg, whitesmoke 0%, #e5e5e5 100%);
+  background-image: linear-gradient(0deg, #e5e5e5 0%, whitesmoke 100%);
 }
-._button_14jww_1:hover {
+._button_14o1f_1:hover {
   color: #337797;
   border: 1px solid #CBE3EE;
   border-bottom-color: #97C7DD;
   background: #f0f7fa;
-  background-image: -webkit-linear-gradient(-90deg, #f0f7fa 0%, #d8eaf2 100%);
+  background-image: linear-gradient(0deg, #d8eaf2 0%, #f0f7fa 100%);
 }
-._button_14jww_1 + button {
+._button_14o1f_1:active {
+  background: #f0f7fa;
+  background-image: linear-gradient(0deg, #cccccc 0%, #cacaca 100%);
+}
+._button_14o1f_1:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.46);
+}
+._button_14o1f_1 + button {
   margin-left: 10px;
 }
 ._footer_3pk6u_1 {
