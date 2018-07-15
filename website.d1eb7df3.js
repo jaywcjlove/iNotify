@@ -48050,8 +48050,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-        "panel": "_panel_flk7b_1",
-        "button": "_button_flk7b_12"
+        "panel": "_panel_trbom_1",
+        "button": "_button_trbom_13"
 };
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"styles/reset.less":[function(require,module,exports) {
 
@@ -48370,6 +48370,8 @@ Notify.prototype = {
 };
 
 exports.default = Notify;
+},{}],"assets/iNotify.png":[function(require,module,exports) {
+module.exports = "/iNotify.801fa20a.png";
 },{}],"assets/msg.mp4":[function(require,module,exports) {
 module.exports = "/msg.d1bfd808.mp4";
 },{}],"assets/msg.mp3":[function(require,module,exports) {
@@ -48422,6 +48424,10 @@ require('./styles/reset.less');
 var _main = require('../src/main');
 
 var _main2 = _interopRequireDefault(_main);
+
+var _iNotify = require('./assets/iNotify.png');
+
+var _iNotify2 = _interopRequireDefault(_iNotify);
 
 var _msg = require('./assets/msg.mp4');
 
@@ -48558,7 +48564,8 @@ var App = function (_Component) {
                 item.label
               );
             })
-          )
+          ),
+          _react2.default.createElement('img', { src: _iNotify2.default, alt: 'iNotify' })
         ),
         _react2.default.createElement(_Markdown2.default, { source: _doc2.default }),
         _react2.default.createElement(_GithubShields2.default, {
@@ -48585,7 +48592,7 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"../node_modules/react/index.js","./components/Markdown":"components/Markdown/index.js","./components/GithubCorner":"components/GithubCorner.js","./doc.md":"doc.md","./components/GithubShields":"components/GithubShields.js","./components/Button":"components/Button/index.js","./components/Footer":"components/Footer.js","./styles/index.less":"styles/index.less","./styles/reset.less":"styles/reset.less","../src/main":"../src/main.js","./assets/msg.mp4":"assets/msg.mp4","./assets/msg.mp3":"assets/msg.mp3","./assets/msg.wav":"assets/msg.wav"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./components/Markdown":"components/Markdown/index.js","./components/GithubCorner":"components/GithubCorner.js","./doc.md":"doc.md","./components/GithubShields":"components/GithubShields.js","./components/Button":"components/Button/index.js","./components/Footer":"components/Footer.js","./styles/index.less":"styles/index.less","./styles/reset.less":"styles/reset.less","../src/main":"../src/main.js","./assets/iNotify.png":"assets/iNotify.png","./assets/msg.mp4":"assets/msg.mp4","./assets/msg.mp3":"assets/msg.mp3","./assets/msg.wav":"assets/msg.wav"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -48632,7 +48639,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60045' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62595' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
