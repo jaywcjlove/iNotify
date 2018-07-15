@@ -4,7 +4,7 @@
 
 JS 实现浏览器的 title 闪烁、滚动、声音提示、chrome、Firefox、Safari等系统通知。它没有依赖，压缩只有只有4.66kb(gzipped: 1.70kb)，Official document [demo preview](https://jaywcjlove.github.io/iNotify)。
 
-[![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/iNotify.png?raw=true)](https://jaywcjlove.github.io/iNotify)
+[![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true)](https://jaywcjlove.github.io/iNotify)
 
 ## 下载
 

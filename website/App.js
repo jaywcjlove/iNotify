@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import styles from './styles/index.less';
 import './styles/reset.less';
 import Notify from '../src/main';
+import notifyImg from './assets/iNotify.png';
 
 import mp4 from './assets/msg.mp4';
 import mp3 from './assets/msg.mp3';
@@ -125,6 +126,7 @@ export default class App extends Component {
               );
             })}
           </div>
+          <img src={notifyImg} alt="iNotify" />
         </div>
         <Markdown source={DocumentStr} />
         <GithubShields
