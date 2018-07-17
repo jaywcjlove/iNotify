@@ -41,21 +41,21 @@ export default class App extends Component {
           },
         },
         {
-          label: '清除标题闪烁',
+          label: '停止标题动画',
           onClick: () => {
             this.iN.setTitle();
           },
         },
         {
-          label: '播放闪烁动画',
+          label: '播放标题动画',
           onClick: () => {
             this.iN.setTitle(true);
           },
         },
         {
-          label: '闪烁标题提示',
+          label: '标题动画，更新标题',
           onClick: () => {
-            this.iN.setTitle('新消息');
+            this.iN.setTitle('标题动画，更新标题');
           },
         },
         {
@@ -89,9 +89,10 @@ export default class App extends Component {
 
   componentDidMount() {
     this.iN = new Notify({
-      effect: 'flash',
-      interval: 500,
-      message: '有消息拉！2',
+      // effect: 'flash',
+      effect: 'scroll',
+      interval: 300,
+      message: '有消息拉！',
       audio: {
         file: [mp4, mp3, wav],
       },
@@ -100,9 +101,9 @@ export default class App extends Component {
         body: '您来了一条新消息',
       },
     });
-    this.iN.setTitle('新标题')
+    this.iN.setTitle('New news, welcome to iNotify!')
       .notify({
-        title: '欢迎使用iNotify',
+        title: 'Welcome to iNotify!',
         body: '你正在打开 iNotify 官网！',
       })
       .player();
