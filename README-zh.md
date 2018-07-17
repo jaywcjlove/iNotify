@@ -1,7 +1,26 @@
+<p align="center">
+  <a href="https://jaywcjlove.github.io/iNotify">
+    <img alt="iNotify 实例预览" src="https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true">
+  </a>
+</p>
 
-[![界面预览](https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true)](https://jaywcjlove.github.io/iNotify)
-
-[![](https://img.shields.io/github/issues/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/issues) [![](https://img.shields.io/github/forks/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/network) [![](https://img.shields.io/github/stars/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/stargazers) [![](https://img.shields.io/github/release/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/releases) [![](https://img.shields.io/npm/v/@wcjiang/notify.svg)](https://www.npmjs.com/package/@wcjiang/notify)
+<p align="center">
+  <a href="https://github.com/jaywcjlove/iNotify/issues">
+    <img src="https://img.shields.io/github/issues/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/network">
+    <img src="https://img.shields.io/github/forks/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/stargazers">
+    <img src="https://img.shields.io/github/stars/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/releases">
+    <img src="https://img.shields.io/github/release/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/@wcjiang/notify">
+    <img src="https://img.shields.io/npm/v/@wcjiang/notify.svg">
+  </a>
+</p>
 
 JS 实现浏览器的 title 闪烁、滚动、声音提示、通知，没有依赖. 它不会干扰任何JavaScript库或框架。有合理的体积 5.05kb (gzipped: 1.75kb)，官方文档[实例预览](https://jaywcjlove.github.io/iNotify)。
 

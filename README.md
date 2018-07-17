@@ -1,7 +1,27 @@
 
-[![demo preview](https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true)](https://jaywcjlove.github.io/iNotify)
+<p align="center">
+  <a href="https://jaywcjlove.github.io/iNotify">
+    <img alt="iNotify demo preview" src="https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true">
+  </a>
+</p>
 
-[![](https://img.shields.io/github/issues/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/issues) [![](https://img.shields.io/github/forks/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/network) [![](https://img.shields.io/github/stars/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/stargazers) [![](https://img.shields.io/github/release/jaywcjlove/iNotify.svg)](https://github.com/jaywcjlove/iNotify/releases) [![](https://img.shields.io/npm/v/@wcjiang/notify.svg)](https://www.npmjs.com/package/@wcjiang/notify)
+<p align="center">
+  <a href="https://github.com/jaywcjlove/iNotify/issues">
+    <img src="https://img.shields.io/github/issues/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/network">
+    <img src="https://img.shields.io/github/forks/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/stargazers">
+    <img src="https://img.shields.io/github/stars/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://github.com/jaywcjlove/iNotify/releases">
+    <img src="https://img.shields.io/github/release/jaywcjlove/iNotify.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/@wcjiang/notify">
+    <img src="https://img.shields.io/npm/v/@wcjiang/notify.svg">
+  </a>
+</p>
 
 JS achieve the browser title flashing, scrolling, voice prompts, Chrome/Safari/FireFox/IE notice. has no dependencies. It  not interfere with any JavaScript libraries or frameworks. has a reasonable footprint 5.05kb (gzipped: 1.75kb)，Official document [demo preview](https://jaywcjlove.github.io/iNotify)。
 
