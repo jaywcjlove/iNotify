@@ -90,7 +90,7 @@ Notify.prototype = {
     if (!config) {
       config = {};
     }
-    this.interval = config.interval || 200; // 响应时长
+    this.interval = config.interval || 100; // 响应时长
     this.effect = config.effect || 'flash'; // 效果
     this.title = config.title || document.title; // 标题
     this.message = config.message || this.title; // 原来的标题
@@ -114,18 +114,34 @@ Notify.prototype = {
     return this;
   },
   render() {
-    switch (this.effect) {
-      case 'flash':
-        document.title = (this.title === document.title) ? this.message : this.title;
-        break;
-      case 'scroll':
-        document.title = document.title.slice(1);
-        if (document.title.length === 0) {
-          document.title = this.message;
-        }
-        break;
-      default: break;
+    if (this.effect === 'flash') {
+      document.title = (this.title === document.title) ? this.message : this.title;
+    } else if (this.effect === 'scroll') {
+      const title = this.message || document.title;
+      if (!this.scrollTitle || !this.scrollTitle.slice(1)) {
+        document.title = title;
+        this.scrollTitle = title;
+      } else {
+        this.scrollTitle = this.scrollTitle.slice(1);
+        document.title = this.scrollTitle;
+      }
     }
+    return this;
+  },
+  // 设置标题
+  setTitle(str) {
+    if (str === true) {
+      if (repeatableEffects.indexOf(this.effect) >= 0) {
+        return this.addTimer();
+      }
+    } else if (str) {
+      this.message = str;
+      this.scrollTitle = '';
+      this.addTimer();
+    } else {
+      this.clearTimer();
+    }
+    return this;
   },
   setURL(url) {
     if (url) {
@@ -193,20 +209,6 @@ Notify.prototype = {
   // 是否许可弹框通知
   isPermission() {
     return window.Notification && Notification.permission === 'granted';
-  },
-  // 设置标题
-  setTitle(str) {
-    if (str === true) {
-      if (repeatableEffects.indexOf(this.effect) >= 0) {
-        return this.addTimer();
-      }
-    } else if (str) {
-      this.message = str;
-      this.addTimer();
-    } else {
-      this.clearTimer();
-    }
-    return this;
   },
   // 设置时间间隔
   setInterval(num) {
@@ -286,7 +288,7 @@ Notify.prototype = {
   },
   // 清除计数器
   clearTimer() {
-    clearInterval(this.timer);
+    this.timer && clearInterval(this.timer);
     document.title = this.title;
     return this;
   },
