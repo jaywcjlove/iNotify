@@ -7,8 +7,8 @@ let iconURL = '';
 const repeatableEffects = ['flash', 'scroll'];
 
 const defaultNotification = {
-  title: '通知！',
-  body: '您来了一条新消息',
+  title: 'iNotify !',
+  body: 'You have a new message.',
   openurl: '',
 };
 
