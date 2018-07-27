@@ -1,5 +1,5 @@
 /*!
- * @wcjiang/notify v2.0.7
+ * @wcjiang/notify v2.0.8
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
  * 
  * Copyright (c) 2018 kenny wang
@@ -18,8 +18,8 @@ var iconURL = '';
 var repeatableEffects = ['flash', 'scroll'];
 
 var defaultNotification = {
-  title: '通知！',
-  body: '您来了一条新消息',
+  title: 'iNotify !',
+  body: 'You have a new message.',
   openurl: ''
 };
 
