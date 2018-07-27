@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Markdown from './components/Markdown';
 import GithubCorner from './components/GithubCorner';
-import DocumentStr from './doc.md';
+import DocumentStr from '../README.md';
 import GithubShields from './components/GithubShields';
 import Button from './components/Button';
 import Footer from './components/Footer';
@@ -20,65 +20,65 @@ export default class App extends Component {
     this.state = {
       button: [
         {
-          label: '弹出框',
+          label: 'Popup box',
           onClick: () => {
             this.iN.notify({
-              title: '欢迎使用iNotify',
-              body: '你正在打开 iNotify 官网！',
+              title: 'Welcome to iNotify!',
+              body: 'You are opening the iNotify website!',
             });
           },
         },
         {
-          label: '播放声音',
+          label: 'Play sound',
           onClick: () => {
             this.iN.player();
           },
         },
         {
-          label: '停止播放声音',
+          label: 'Stop playing sound',
           onClick: () => {
             this.iN.stopPlay();
           },
         },
         {
-          label: '停止标题动画',
+          label: 'Stop title animation',
           onClick: () => {
             this.iN.setTitle();
           },
         },
         {
-          label: '播放标题动画',
+          label: 'Play title animation',
           onClick: () => {
             this.iN.setTitle(true);
           },
         },
         {
-          label: '标题动画，更新标题',
+          label: 'Title animation, update title',
           onClick: () => {
-            this.iN.setTitle('标题动画，更新标题');
+            this.iN.setTitle('Title animation, update title.');
           },
         },
         {
-          label: '消息数',
+          label: 'Number of messages',
           onClick: () => {
             const num = Math.floor(Math.random() * 10) || 2;
             this.iN.faviconClear().setFavicon(num + 1);
           },
         },
         {
-          label: '清空消息数',
+          label: 'Clear the messages number',
           onClick: () => {
             this.iN.faviconClear();
           },
         },
         {
-          label: 'Favicon 字体颜色',
+          label: 'Favicon Font color',
           onClick: () => {
             this.iN.setFaviconColor('#0043ff');
           },
         },
         {
-          label: 'Favicon 背景颜色',
+          label: 'Favicon Background color',
           onClick: () => {
             this.iN.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
           },
@@ -104,13 +104,15 @@ export default class App extends Component {
     this.iN.setTitle('New news, welcome to iNotify!')
       .notify({
         title: 'Welcome to iNotify!',
-        body: '你正在打开 iNotify 官网！',
+        body: 'You are opening the iNotify website!',
       })
       .player();
   }
 
   render() {
     const { button } = this.state;
+    let DocumentStrSource = DocumentStr;
+    if (DocumentStrSource) DocumentStrSource = DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '');
     return (
       <div className={styles.wapper}>
         <GithubCorner url="https://github.com/jaywcjlove/iNotify" />
@@ -129,7 +131,7 @@ export default class App extends Component {
           </div>
           <img src={notifyImg} alt="iNotify" />
         </div>
-        <Markdown source={DocumentStr} />
+        <Markdown source={DocumentStrSource} />
         <GithubShields
           source={[
             {

@@ -23,10 +23,13 @@
   </a>
 </p>
 
+<!--dividing-->
+
 JS achieve the browser title flashing, scrolling, voice prompts, Chrome/Safari/FireFox/IE notice. has no dependencies. It  not interfere with any JavaScript libraries or frameworks. has a reasonable footprint 5.05kb (gzipped: 1.75kb)，Official document [demo preview](https://jaywcjlove.github.io/iNotify)。
 
+## Installation
 
-## 下载
+You will need Node.js installed on your system.
 
 ```bash
 # v2.x
@@ -35,46 +38,47 @@ $ npm install @wcjiang/notify --save
 $ npm install title-notify --save
 ```
 
-## 使用
+## Using
 
 ```js 
 import Notify from '@wcjiang/notify';
 
 const notify = new Notify({
-  message: '有消息了。', // 标题
-  effect: 'flash', // flash | scroll 闪烁还是滚动
-  openurl:'https://github.com/jaywcjlove/iNotify', // 点击弹窗打开连接地址
-  onclick: () => { // 点击弹出的窗之行事件
+  message: '有消息了。', // page title.
+  effect: 'flash', // flash | scroll, Flashing or scrolling
+  openurl:'https://github.com/jaywcjlove/iNotify', // Click on the pop-up window to open the connection address
+  onclick: () => { // Click on the pop-up window trip event
     console.log('---')
   },
-  // 可选播放声音
+  // Optional playback sound
   audio:{
-    // 可以使用数组传多种格式的声音文件
+    // You can use arrays to pass sound files in multiple formats.
     file: ['msg.mp4','msg.mp3','msg.wav']
-    // 下面也是可以的哦
+    // The following is also work.
     // file: 'msg.mp4'
   },
-  // 标题闪烁，或者滚动速度
+  // Title flashing, or scrolling speed
   interval: 1000,
-  // 可选，默认绿底白字的  Favicon
+  // Optional, default green background white text. Favicon
   updateFavicon:{
-    // favicon 字体颜色
+    // favicon font color
     textColor: '#fff',
-    // 背景颜色，设置背景颜色透明，将值设置为“transparent”
+    // Background color, set the background color to be transparent, set the value to "transparent"
     backgroundColor: '#2F9A00' 
   },
-  // 可选chrome浏览器通知，默认不填写就是下面的内容
+  // Optional chrome browser notifications，
+  // The default is not to fill in the following content
   notification:{
-    title:'通知！', // 设置标题
-    icon:'', // 设置图标 icon 默认为 Favicon
-    body:'您来了一条新消息', // 设置消息内容
+    title:'通知！', // Set notification title
+    icon:'', // Set notification icon, The default is Favicon
+    body:'您来了一条新消息', // Set message content
   }
 });
 
 notify.player();
 ```
 
-在您的HTML中手动下载并引入 **notify.js**，你也可以通过 [UNPKG](https://unpkg.com/@wcjiang/notify/dist/) 进行下载：
+Or manually download and link **notify.js** in your HTML, It can also be downloaded via [UNPKG](https://unpkg.com/@wcjiang/notify/dist/)：
 
 ```html
 <script src="https://unpkg.com/@wcjiang/notify/dist/notify.min.js"></script>
@@ -89,34 +93,34 @@ notify.setFavicon('1');
 
 ## option
 
-- **message**: String 标题
-- **effect**: String, flash | scroll | favicon 闪烁还是滚动
-- **audio**: 可选播放声音
-  - **file**: String/Array 可以使用数组传多种格式的声音文件
-- **interval**: Number 标题闪烁，或者滚动速度
-- **openurl**: String 点击弹窗打开连接地址
-- **onclick**: Function 弹窗点击事件
-- **updateFavicon**: 设置 Favicon 图标颜色
-  - **textColor**: 设置 favicon 字体颜色
-  - **backgroundColor**: 背景颜色，设置背景颜色透明，将值设置为 `transparent`
-- **notification**: 可选chrome浏览器通知，默认不填写就是下面的内容
-  - **title**: 默认值 `通知！`
-  - **icon**: 设置图标 icon 默认为 Favicon
-  - **body**: 设置消息内容
+- **message**: String, page title
+- **effect**: String, flash | scroll | favicon,  Flashing or scrolling
+- **audio**: Optional playback sound
+  - **file**: String/Array, You can use arrays to pass sound files in multiple formats.
+- **interval**: Number, Title flashing, or scrolling speed.
+- **openurl**: String, Click on the pop-up window to open the connection address
+- **onclick**: Function, Click on the pop-up window trip event
+- **updateFavicon**: Optional, default green background white text. Favicon
+  - **textColor**: String, favicon font color.
+  - **backgroundColor**: Background color, set the background color to be transparent, set the value to "transparent"
+- **notification**:  Optional chrome browser notifications, The default is not to fill in the following content
+  - **title**: Set notification title `iNotify`
+  - **icon**: Set notification icon, The default is Favicon
+  - **body**: Set message content
 
 ## isPermission
 
-判断浏览器弹框通知是否被阻止。
+Determine if the browser bulletin notification is blocked.
 
 ```js
 iNotify.isPermission()
 ```
 
-## 声音设置
+## Sound Settings
 
 ### player
 
-播放声音
+Play sound.
 
 ```js
 iNotify.player()
@@ -124,7 +128,7 @@ iNotify.player()
 
 ### loopPlay
 
-自动播放声音
+Loop the sound.
 
 ```js
 iNotify.loopPlay()
@@ -132,7 +136,7 @@ iNotify.loopPlay()
 
 ### stopPlay
 
-停止播放声音
+Stop playing sound.
 
 ```js
 iNotify.stopPlay()
@@ -140,31 +144,31 @@ iNotify.stopPlay()
 
 ### setURL
 
-设置播放声音URL
+Set the playback sound URL.
 
 ```js
-iNotify.setURL('msg.mp3') // 设置一个
-iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // 设置多个
+iNotify.setURL('msg.mp3') // Set one
+iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // Set multiple
 ```
 
 ## title
 
-最新的版本默认不播放标题闪烁动画，初始化之后需要调用 `setTitle(true)` 方法才播放标题动画。
+The latest version does not play the title blinking animation by default. After initialization, you need to call the `setTitle(true)` method to play the title animation.
 
 ### setTitle
 
-设置标题，
+Set the title.
 
 ```js
-iNotify.setTitle(true) // 播放动画
-iNotify.setTitle('新标题') // 闪烁新标题
-iNotify.setTitle() // 清除闪烁 显示原来的标题
+iNotify.setTitle(true) // Play animation
+iNotify.setTitle('New title') // Flashing new title
+iNotify.setTitle() // Clear Blinking Show original title
 ```
 
 
 ### setInterval
 
-设置时间间隔  
+Set time interval.
 
 ```js
 iNotify.setInterval(2000)
@@ -172,7 +176,7 @@ iNotify.setInterval(2000)
 
 ### addTimer
 
-添加计数器
+Add counter
 
 ```js
 iNotify.addTimer()
@@ -180,17 +184,17 @@ iNotify.addTimer()
 
 ### clearTimer
 
-清除计数器  
+Clear counter.
 
 ```js
 iNotify.clearTimer()
 ```
 
-## favicon通知
+## Favicon Notice
 
 ### setFavicon
 
-设置 icon 显示数字或者文本
+Set `icon` to display numbers or text
 
 ```js
 iNotify.setFavicon(10)
@@ -198,7 +202,7 @@ iNotify.setFavicon(10)
 
 ### setFaviconColor
 
-设置 icon 显示文本颜色
+Set `icon` display text color
 
 ```js
 iNotify.setFaviconColor('#0043ff')
@@ -258,9 +262,9 @@ iNotify.notify({
 `iNotify.init().title;` 获取标题
 
 
-## 例子
+## Example
 
-### 实例一
+### Example 1
 
 ```js
 function iconNotify(num){
@@ -283,7 +287,7 @@ function iconNotify(num){
 }
 ```
 
-### 实例二
+### Example 2
 
 ```js
 var notify = new Notify({
@@ -293,7 +297,7 @@ var notify = new Notify({
 notify.setFavicon('1');
 ```
 
-### 实例三
+### Example 3
 
 ```js
 var iN = new Notify({
@@ -307,13 +311,13 @@ var iN = new Notify({
 }).setFavicon(10);
 ```
 
-### 实例四
+### Example 4
 
 ```js
 var iN = new Notify().setFavicon(5);
 ```
 
-### 实例五
+### Example 5
 
 ```js
 var iN = new Notify({
@@ -326,7 +330,7 @@ var iN = new Notify({
 }).setFavicon(10).player();
 ```
 
-### 实例五
+### Example 6
 
 ```js
 var iN = new Notify({
@@ -352,7 +356,7 @@ iN.notify({
 }); 
 ```
 
-### 实例六
+### Example 7
 
 ```js
 var iN =  new Notify({
