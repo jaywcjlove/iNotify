@@ -21,6 +21,9 @@
   <a href="https://www.npmjs.com/package/@wcjiang/notify">
     <img src="https://img.shields.io/npm/v/@wcjiang/notify.svg">
   </a>
+  <a href="./README-zh.md">
+    <img src="https://jaywcjlove.github.io/sb/lang/chinese.svg">
+  </a>
 </p>
 
 <!--dividing-->
