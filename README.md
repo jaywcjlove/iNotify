@@ -44,7 +44,7 @@ $ npm install title-notify --save
 import Notify from '@wcjiang/notify';
 
 const notify = new Notify({
-  message: '有消息了。', // page title.
+  message: 'There is message.', // page title.
   effect: 'flash', // flash | scroll, Flashing or scrolling
   openurl:'https://github.com/jaywcjlove/iNotify', // Click on the pop-up window to open the connection address
   onclick: () => { // Click on the pop-up window trip event
@@ -69,9 +69,9 @@ const notify = new Notify({
   // Optional chrome browser notifications，
   // The default is not to fill in the following content
   notification:{
-    title:'通知！', // Set notification title
+    title:'Notification!', // Set notification title
     icon:'', // Set notification icon, The default is Favicon
-    body:'您来了一条新消息', // Set message content
+    body:'You have a new message!', // Set message content
   }
 });
 
@@ -210,34 +210,34 @@ iNotify.setFaviconColor('#0043ff')
 
 ### setFaviconBackgroundColor
 
-设置 icon 显示文本颜色
+Set `icon` to display text color
 
 ```js
 iNotify.setFaviconBackgroundColor('#0043ff')
-// 设置字体和背景颜色
+// Set font and background color
 iNotify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
 ```
 
 ### faviconClear
 
-清除数字显示原来的icon
+Clear digital display original `icon`.
 
 ```js
 iNotify.faviconClear()
 ```
 
-## chrome通知
+## Chrome Notice
 
 ### notify
 
-弹出chrome通知，不传参数为预设值...
+The chrome notification pops up, and the parameters are not passed as default values...
 
 ```js
 iNotify.notify(); 
 iNotify.notify({
-  title: '新通知',
-  body: '打雷啦，下雨啦...',
-  openurl: 'http://www.bing.com',
+  title: 'New notice',
+  body: 'Thunder, it’s raining...',
+  openurl: 'https://jaywcjlove.github.io',
   onclick: function() {
     console.log('on click')
   },
@@ -247,20 +247,19 @@ iNotify.notify({
 });
 ```
 
-- title 一定会被显示的通知标题。
-- dir 文字的方向；它的值可以是 auto（自动）, ltr（从左到右）, or rtl（从右到左）。
-- icon 一个图片的URL，将被用于显示通知的图标。
-- body 通知中额外显示的字符串。
-- openurl 点击打开指定 URL。
-- onclick 每当用户点击通知时被触发。
-- onshow 当通知显示的时候被触发。
-- onerror 每当通知遇到错误时被触发。
-- onclose 当用户关闭通知时被触发。
+- `title` The notification title that will be displayed.
+- `dir` The direction of the text; its value can be auto (auto), ltr (left to right), or rtl (right to left).
+- `icon` The URL of a picture that will be used to display the icon for the notification.
+- `body` A string that is additionally displayed in the notification.
+- `openurl` Click to open the specified URL.
+- `onclick` Triggered whenever the user clicks on the notification.
+- `onshow` Triggered when the notification is displayed.
+- `onerror` Triggered whenever a notification encounters an error.
+- `onclose` Triggered when the user closes the notification.
 
-## 其它
+## Other
 
-`iNotify.init().title;` 获取标题
-
+`iNotify.init().title;` Get the title.
 
 ## Example
 
@@ -279,10 +278,10 @@ function iconNotify(num){
     notify.setTitle();
   } else if (num < 100){
     notify.setFavicon(num)
-    notify.setTitle('有新消息！');
+    notify.setTitle('There is new message!');
   } else if (num > 99){
     notify.setFavicon('..')
-    notify.setTitle('有新消息！');
+    notify.setTitle('There is new message!');
   }
 }
 ```
@@ -303,10 +302,10 @@ notify.setFavicon('1');
 var iN = new Notify({
   effect: 'flash',
   interval: 500,
-  message: '有消息拉！',
-  updateFavicon:{ // 可选，默认绿底白字
-    textColor: '#fff',// favicon 字体颜色
-    backgroundColor: '#2F9A00', // 背景颜色
+  message: 'There is new message!',
+  updateFavicon:{ // Optional, default green background white
+    textColor: '#fff',// favicon font color
+    backgroundColor: '#2F9A00', // favicon background color
   }
 }).setFavicon(10);
 ```
@@ -323,7 +322,7 @@ var iN = new Notify().setFavicon(5);
 var iN = new Notify({
   effect: 'flash',
   interval: 500,
-  message: "有消息拉！",
+  message: "There is new message!",
   audio:{
     file: 'msg.mp4',
   }
@@ -336,23 +335,23 @@ var iN = new Notify({
 var iN = new Notify({
   effect: 'flash',
   interval: 500,
-  message: '有消息拉！',
+  message: 'There is new message!',
   audio:{
-    file: 'msg.mp4'//可以使用数组传多种格式的声音文件
+    file: 'msg.mp4', // You can use arrays to pass sound files in multiple formats.
   },
   notification:{
-    title: '通知！',
-    icon: '',
-    body: '您来了一条新消息'
+    title: 'Notification!', // Set notification title
+    icon: '', // Set notification icon, The default is Favicon
+    body: 'You have a new message!', // Set message content
   }
 }).setFavicon(10).player();
 
-//弹出chrome通知，不传参数为预设值...
+// The chrome notification pops up, and the parameters are not passed as default values...
 iN.notify(); 
 
 iN.notify({
-  title: '新通知',
-  body: '打雷啦，下雨啦...'
+  title: 'Notification!', // Set notification title
+  body: 'You have a new message!', // Set message content
 }); 
 ```
 
@@ -362,13 +361,13 @@ iN.notify({
 var iN =  new Notify({
   effect: 'flash',
   interval: 500,
-  message: '有消息拉！',
+  message: 'There is new message!',
   audio:{
     file: ['msg.mp4', 'msg.mp3', 'msg.wav']
   },
   notification:{
-    title: '通知！',
-    body:'您来了一条新消息'
+    title: 'Notification!', // Set notification title
+    body: 'You have a new message!', // Set message content
   }
 })
 
@@ -379,14 +378,14 @@ var n = new Notify()
 n.init({
   effect: 'flash',
   interval: 500,
-  message: '有消息拉！',
+  message: 'There is new message!',
   audio:{
     file: ['openSub.mp4', 'openSub.mp3', 'openSub.wav'],
   },
   notification:{
-    title:'通知！',
+    title:'Notification!',
     icon: '',
-    body:'您来了一个客户',
+    body:'You have a new message!',
   }
 })
 
