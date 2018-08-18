@@ -120,16 +120,16 @@ export default class App extends Component {
           <h1>
             iNotify
           </h1>
-          <div className={styles.button}>
-            {button.map((item, key) => {
-              return (
-                <Button key={key} onClick={item.onClick}>
-                  {item.label}
-                </Button>
-              );
-            })}
-          </div>
           <img src={notifyImg} alt="iNotify" />
+        </div>
+        <div className={styles.button}>
+          {button.map((item, key) => {
+            return (
+              <Button key={key} onClick={item.onClick}>
+                {item.label}
+              </Button>
+            );
+          })}
         </div>
         <Markdown source={DocumentStrSource} />
         <GithubShields
