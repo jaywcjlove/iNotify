@@ -397,4 +397,4 @@ n.setFavicon(10).player();
 
 ## License
 
-[MIT © Kenny Wong](./MIT-LICENSE)
+[MIT © Kenny Wong](https://github.com/jaywcjlove/iNotify/blob/master/MIT-LICENSE)
