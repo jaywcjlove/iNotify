@@ -1,5 +1,5 @@
 /*!
- * @wcjiang/notify v2.0.9
+ * @wcjiang/notify v2.0.10
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
  * 
  * Copyright (c) 2018 kenny wang
@@ -213,6 +213,7 @@ Notify.prototype = {
       n.onerror = function () {
         json.onerror && typeof json.onerror === 'function' && json.onerror(n);
       };
+      this.Notifiy = n;
     }
     return this;
   },
@@ -285,6 +286,9 @@ Notify.prototype = {
       this.timer = setInterval(this.render.bind(this), this.interval);
     }
     return this;
+  },
+  close: function close() {
+    if (this.Notifiy) this.Notifiy.close();
   },
 
   // 清除Icon
