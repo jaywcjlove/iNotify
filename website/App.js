@@ -72,6 +72,23 @@ export default class App extends Component {
           },
         },
         {
+          label: 'Open website.',
+          onClick: () => {
+            this.iN.notify({
+              title: 'Welcome to iNotify!',
+              body: 'You are opening the iNotify website!',
+              openurl: 'https://github.com/jaywcjlove/iNotify',
+              onclick: () => {
+                console.log('on click');
+                this.iN.close();
+              },
+              onshow: () => {
+                console.log('on show');
+              },
+            });
+          },
+        },
+        {
           label: 'Favicon Font color',
           onClick: () => {
             this.iN.setFaviconColor('#0043ff');
@@ -100,11 +117,16 @@ export default class App extends Component {
         title: '通知！',
         body: '您来了一条新消息',
       },
+      onclick: () => {
+        console.log('on click');
+        this.iN.close();
+      },
     });
     this.iN.setTitle('New news, welcome to iNotify!')
       .notify({
         title: 'Welcome to iNotify!',
         body: 'You are opening the iNotify website!',
+        openurl: 'https://github.com/jaywcjlove/iNotify',
       })
       .player();
   }

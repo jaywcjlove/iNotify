@@ -51,6 +51,8 @@ const notify = new Notify({
   effect: 'flash', // flash | scroll, Flashing or scrolling
   openurl:'https://github.com/jaywcjlove/iNotify', // Click on the pop-up window to open the connection address
   onclick: () => { // Click on the pop-up window trip event
+    // Programmatically closes a notification.
+    notify.close();
     console.log('---')
   },
   // Optional playback sound
@@ -168,13 +170,20 @@ iNotify.setTitle('New title') // Flashing new title
 iNotify.setTitle() // Clear Blinking Show original title
 ```
 
-
 ### setInterval
 
 Set time interval.
 
 ```js
 iNotify.setInterval(2000)
+```
+
+### close
+
+Programmatically closes a notification.
+
+```js
+iNotify.close();
 ```
 
 ### addTimer

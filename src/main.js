@@ -203,6 +203,7 @@ Notify.prototype = {
       n.onerror = () => {
         (json.onerror && typeof json.onerror === 'function') && json.onerror(n);
       };
+      this.Notifiy = n;
     }
     return this;
   },
@@ -269,6 +270,9 @@ Notify.prototype = {
       this.timer = setInterval(this.render.bind(this), this.interval);
     }
     return this;
+  },
+  close() {
+    if (this.Notifiy) this.Notifiy.close();
   },
   // 清除Icon
   faviconClear() {
