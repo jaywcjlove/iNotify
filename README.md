@@ -41,6 +41,8 @@ $ npm install @wcjiang/notify --save
 $ npm install title-notify --save
 ```
 
+> ⚠️: open in server. You can use [ssr](https://github.com/jaywcjlove/ssr) to quickly create a service..
+
 ## Using
 
 ```js 
