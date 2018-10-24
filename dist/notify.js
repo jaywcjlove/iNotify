@@ -1,5 +1,5 @@
 /*!
- * @wcjiang/notify v2.0.10
+ * @wcjiang/notify v2.0.11
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
  * 
  * Copyright (c) 2018 kenny wang
@@ -11,7 +11,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.notify = factory());
+  (global.Notify = factory());
 }(this, (function () { 'use strict';
 
   // 提醒是否添加chrome通知
