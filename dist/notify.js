@@ -11,7 +11,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.Notify = factory());
+  (global.notify = factory());
 }(this, (function () { 'use strict';
 
   // 提醒是否添加chrome通知
