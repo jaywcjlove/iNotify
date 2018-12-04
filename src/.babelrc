@@ -1,13 +1,16 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
-        "modules": false
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie >= 10"
+          ]
+        }
       }
-    ]
-  ],
-  "plugins": [
-    "external-helpers"
+    ],
+    "@babel/preset-react"
   ]
 }
