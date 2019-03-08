@@ -120,7 +120,7 @@ notify.setFavicon('1');
 Determine if the browser bulletin notification is blocked.
 
 ```js
-iNotify.isPermission()
+notify.isPermission()
 ```
 
 ## Sound Settings
@@ -130,7 +130,7 @@ iNotify.isPermission()
 Play sound.
 
 ```js
-iNotify.player()
+notify.player()
 ```
 
 ### loopPlay
@@ -138,7 +138,7 @@ iNotify.player()
 Loop the sound.
 
 ```js
-iNotify.loopPlay()
+notify.loopPlay()
 ```
 
 ### stopPlay
@@ -146,7 +146,7 @@ iNotify.loopPlay()
 Stop playing sound.
 
 ```js
-iNotify.stopPlay()
+notify.stopPlay()
 ```
 
 ### setURL
@@ -154,8 +154,8 @@ iNotify.stopPlay()
 Set the playback sound URL.
 
 ```js
-iNotify.setURL('msg.mp3') // Set one
-iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // Set multiple
+notify.setURL('msg.mp3') // Set one
+notify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // Set multiple
 ```
 
 ## title
@@ -167,9 +167,9 @@ The latest version does not play the title blinking animation by default. After 
 Set the title.
 
 ```js
-iNotify.setTitle(true) // Play animation
-iNotify.setTitle('New title') // Flashing new title
-iNotify.setTitle() // Clear Blinking Show original title
+notify.setTitle(true) // Play animation
+notify.setTitle('New title') // Flashing new title
+notify.setTitle() // Clear Blinking Show original title
 ```
 
 ### setInterval
@@ -177,7 +177,7 @@ iNotify.setTitle() // Clear Blinking Show original title
 Set time interval.
 
 ```js
-iNotify.setInterval(2000)
+notify.setInterval(2000)
 ```
 
 ### close
@@ -185,7 +185,7 @@ iNotify.setInterval(2000)
 Programmatically closes a notification.
 
 ```js
-iNotify.close();
+notify.close();
 ```
 
 ### addTimer
@@ -193,7 +193,7 @@ iNotify.close();
 Add counter
 
 ```js
-iNotify.addTimer()
+notify.addTimer()
 ```
 
 ### clearTimer
@@ -201,7 +201,7 @@ iNotify.addTimer()
 Clear counter.
 
 ```js
-iNotify.clearTimer()
+notify.clearTimer()
 ```
 
 ## Favicon Notice
@@ -211,7 +211,7 @@ iNotify.clearTimer()
 Set `icon` to display numbers or text
 
 ```js
-iNotify.setFavicon(10)
+notify.setFavicon(10)
 ```
 
 ### setFaviconColor
@@ -219,7 +219,7 @@ iNotify.setFavicon(10)
 Set `icon` display text color
 
 ```js
-iNotify.setFaviconColor('#0043ff')
+notify.setFaviconColor('#0043ff')
 ```
 
 ### setFaviconBackgroundColor
@@ -227,9 +227,9 @@ iNotify.setFaviconColor('#0043ff')
 Set `icon` to display text color
 
 ```js
-iNotify.setFaviconBackgroundColor('#0043ff')
+notify.setFaviconBackgroundColor('#0043ff')
 // Set font and background color
-iNotify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
+notify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
 ```
 
 ### faviconClear
@@ -237,7 +237,7 @@ iNotify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
 Clear digital display original `icon`.
 
 ```js
-iNotify.faviconClear()
+notify.faviconClear()
 ```
 
 ## Chrome Notice
@@ -247,8 +247,8 @@ iNotify.faviconClear()
 The chrome notification pops up, and the parameters are not passed as default values...
 
 ```js
-iNotify.notify(); 
-iNotify.notify({
+notify.notify(); 
+notify.notify({
   title: 'New notice',
   body: 'Thunder, it’s raining...',
   openurl: 'https://jaywcjlove.github.io',
@@ -273,7 +273,7 @@ iNotify.notify({
 
 ## Other
 
-`iNotify.init().title;` Get the title.
+`notify.init().title;` Get the title.
 
 ## Example
 
