@@ -24,7 +24,6 @@
   "scripts": {
     "build": "node scripts/build.js",
     "watch": "node scripts/watch.js",
-    "deploy": "npm run doc:build && gh-pages -d build",
     "doc": "npm run doc:dev",
     "doc:dev": "NODE_ENV=development parcel website/index.html --out-dir build/ --no-cache",
     "doc:build": "NODE_ENV=production parcel build website/index.html --out-dir build/ --public-url ./ --no-cache"
@@ -41,6 +40,8 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.2.0",
+    "@uiw/react-markdown-preview": "~4.0.5",
+    "@wcj/dark-mode": "~1.0.13",
     "autoprefixer": "^8.6.5",
     "babel-eslint": "^8.2.6",
     "bannerjs": "^1.0.5",
@@ -51,21 +52,17 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
-    "gh-pages": "^1.2.0",
-    "highlight.js": "^9.12.0",
     "less": "^3.7.1",
     "parcel-bundler": "^1.12.0",
     "parcel-plugin-markdown-string": "^1.3.2",
     "postcss-modules": "^1.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-markdown": "^3.3.4",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "uglify-js": "^3.4.4",
     "zlib": "^1.0.5"
-  },
-  "dependencies": {}
+  }
 }

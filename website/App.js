@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Markdown from './components/Markdown';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import '@wcj/dark-mode';
 import GithubCorner from './components/GithubCorner';
 import DocumentStr from '../README.md';
 import GithubShields from './components/GithubShields';
@@ -137,6 +138,7 @@ export default class App extends Component {
     if (DocumentStrSource) DocumentStrSource = DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '');
     return (
       <div className={styles.wapper}>
+        <dark-mode light="Dart" dark="Light" style={{ position: 'fixed', top: 8, left: 10 }} />
         <GithubCorner url="https://github.com/jaywcjlove/iNotify" />
         <div className={styles.panel}>
           <h1>
@@ -153,7 +155,7 @@ export default class App extends Component {
             );
           })}
         </div>
-        <Markdown source={DocumentStrSource} />
+        <MarkdownPreview style={{ maxWidth: 1024, margin: '0 auto' }} source={DocumentStrSource} />
         <GithubShields
           source={[
             {
