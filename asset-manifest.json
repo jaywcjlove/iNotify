@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/iNotify/static/css/main.d5bc2b6b.css",
-    "main.js": "/iNotify/static/js/main.11837b41.js",
+    "main.js": "/iNotify/static/js/main.6e93f8df.js",
     "refractor-vendor.js": "/iNotify/static/js/refractor-vendor.da922188.js",
     "react-vendor.js": "/iNotify/static/js/react-vendor.58b496f3.js",
     "static/media/iNotify.png": "/iNotify/static/media/iNotify.6a4c13b445a4b49f9e54.png",
@@ -11,7 +11,7 @@
     "static/media/msg.mp4": "/iNotify/static/media/msg.033b6caee3561b67a7f6.mp4",
     "index.html": "/iNotify/index.html",
     "main.d5bc2b6b.css.map": "/iNotify/static/css/main.d5bc2b6b.css.map",
-    "main.11837b41.js.map": "/iNotify/static/js/main.11837b41.js.map",
+    "main.6e93f8df.js.map": "/iNotify/static/js/main.6e93f8df.js.map",
     "refractor-vendor.da922188.js.map": "/iNotify/static/js/refractor-vendor.da922188.js.map",
     "react-vendor.58b496f3.js.map": "/iNotify/static/js/react-vendor.58b496f3.js.map"
   },
@@ -19,6 +19,6 @@
     "static/js/refractor-vendor.da922188.js",
     "static/js/react-vendor.58b496f3.js",
     "static/css/main.d5bc2b6b.css",
-    "static/js/main.11837b41.js"
+    "static/js/main.6e93f8df.js"
   ]
 }
