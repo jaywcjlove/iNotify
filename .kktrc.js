@@ -6,9 +6,36 @@ import scopePluginOptions from '@kkt/scope-plugin-options';
 export default (conf, evn, options) => {
   conf = lessModules(conf, evn, options);
   conf = rawModules(conf, evn, options);
-  return scopePluginOptions(conf, evn, {
+  conf = scopePluginOptions(conf, evn, {
     allowedFiles: [
       path.resolve(process.cwd(), 'README.md')
     ]
   });
+
+  if (evn === 'production') {
+    conf.optimization = {
+      ...conf.optimization,
+      splitChunks: {
+        cacheGroups: {
+          reactvendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react-vendor',
+            chunks: 'all',
+          },
+          refractor: {
+            test: /[\\/]node_modules[\\/](refractor)[\\/]/,
+            name: 'refractor-vendor',
+            chunks: 'all',
+          },
+          codemirror: {
+            test: /[\\/]node_modules[\\/](@codemirror)[\\/]/,
+            name: 'codemirror-vendor',
+            chunks: 'all',
+          },
+        },
+      },
+    };
+    conf.output = { ...conf.output, publicPath: './' };
+  }
+  return conf;
 };
