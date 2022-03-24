@@ -51,7 +51,7 @@
     "@uiw/react-markdown-preview": "~4.0.5",
     "@uiw/react-github-corners": "~1.5.3",
     "@wcj/dark-mode": "~1.0.13",
-    "bannerjs": "^1.0.5",
+    "bannerjs": "^2.0.0",
     "classnames": "^2.2.6",
     "babel-eslint": "~10.1.0",
     "eslint": "^5.15.1",
