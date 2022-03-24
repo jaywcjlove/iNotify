@@ -54,7 +54,7 @@
     "bannerjs": "^1.0.5",
     "classnames": "^2.2.6",
     "babel-eslint": "~10.1.0",
-    "eslint": "^5.15.1",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
