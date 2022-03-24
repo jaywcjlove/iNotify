@@ -42,7 +42,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.2.0",
     "autoprefixer": "^8.6.5",
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^10.0.0",
     "bannerjs": "^1.0.5",
     "classnames": "^2.2.6",
     "colors-cli": "^1.0.17",
