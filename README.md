@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://jaywcjlove.github.io/iNotify">
     <img alt="iNotify demo preview" src="https://github.com/jaywcjlove/iNotify/blob/master/website/assets/iNotify.png?raw=true">
@@ -28,7 +27,7 @@
 
 <!--dividing-->
 
-JS achieve the browser title flashing, scrolling, voice prompts, Chrome/Safari/FireFox/IE notice. has no dependencies. It  not interfere with any JavaScript libraries or frameworks. has a reasonable footprint 5.05kb (gzipped: 1.75kb)，Official document [demo preview](https://jaywcjlove.github.io/iNotify)。
+JS achieve the browser title flashing, scrolling, voice prompts, Chrome/Safari/FireFox/IE notice. has no dependencies. It not interfere with any JavaScript libraries or frameworks. has a reasonable footprint 5.05kb (gzipped: 1.75kb)，Official document [demo preview](https://jaywcjlove.github.io/iNotify)。
 
 ## Installation
 
@@ -37,7 +36,7 @@ You will need Node.js installed on your system.
 ```bash
 # v2.x
 $ npm install @wcjiang/notify --save
-# v1.x 
+# v1.x
 $ npm install title-notify --save
 ```
 
@@ -45,7 +44,7 @@ $ npm install title-notify --save
 
 ## Using
 
-```js 
+```js
 import Notify from '@wcjiang/notify';
 
 const notify = new Notify({
@@ -66,12 +65,13 @@ const notify = new Notify({
   },
   // Title flashing, or scrolling speed
   interval: 1000,
+  disableFavicon: false, is disableFavicon, if true, No longer overwrites the original favicon
   // Optional, default green background white text. Favicon
   updateFavicon:{
     // favicon font color
     textColor: '#fff',
     // Background color, set the background color to be transparent, set the value to "transparent"
-    backgroundColor: '#2F9A00' 
+    backgroundColor: '#2F9A00'
   },
   // Optional chrome browser notifications，
   // The default is not to fill in the following content
@@ -90,18 +90,18 @@ Or manually download and link **notify.js** in your HTML, It can also be downloa
 ```html
 <script src="https://unpkg.com/@wcjiang/notify/dist/notify.min.js"></script>
 <script type="text/javascript">
-var notify = new Notify({
-  effect: 'flash',
-  interval: 500,
-});
-notify.setFavicon('1');
+  var notify = new Notify({
+    effect: "flash",
+    interval: 500,
+  });
+  notify.setFavicon("1");
 </script>
 ```
 
 ## option
 
 - **message**: String, page title
-- **effect**: String, flash | scroll | favicon,  Flashing or scrolling
+- **effect**: String, flash | scroll | favicon, Flashing or scrolling
 - **audio**: Optional playback sound
   - **file**: String/Array, You can use arrays to pass sound files in multiple formats.
 - **interval**: Number, Title flashing, or scrolling speed.
@@ -110,7 +110,7 @@ notify.setFavicon('1');
 - **updateFavicon**: Optional, default green background white text. Favicon
   - **textColor**: String, favicon font color.
   - **backgroundColor**: Background color, set the background color to be transparent, set the value to "transparent"
-- **notification**:  Optional chrome browser notifications, The default is not to fill in the following content
+- **notification**: Optional chrome browser notifications, The default is not to fill in the following content
   - **title**: Set notification title `iNotify`
   - **icon**: Set notification icon, The default is Favicon
   - **body**: Set message content
@@ -120,7 +120,7 @@ notify.setFavicon('1');
 Determine if the browser bulletin notification is blocked.
 
 ```js
-notify.isPermission()
+notify.isPermission();
 ```
 
 ## Sound Settings
@@ -130,7 +130,7 @@ notify.isPermission()
 Play sound.
 
 ```js
-notify.player()
+notify.player();
 ```
 
 ### loopPlay
@@ -138,7 +138,7 @@ notify.player()
 Loop the sound.
 
 ```js
-notify.loopPlay()
+notify.loopPlay();
 ```
 
 ### stopPlay
@@ -146,7 +146,7 @@ notify.loopPlay()
 Stop playing sound.
 
 ```js
-notify.stopPlay()
+notify.stopPlay();
 ```
 
 ### setURL
@@ -154,8 +154,8 @@ notify.stopPlay()
 Set the playback sound URL.
 
 ```js
-notify.setURL('msg.mp3') // Set one
-notify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // Set multiple
+notify.setURL("msg.mp3"); // Set one
+notify.setURL(["msg.mp3", "msg.ogg", "msg.mp4"]); // Set multiple
 ```
 
 ## title
@@ -167,9 +167,9 @@ The latest version does not play the title blinking animation by default. After 
 Set the title.
 
 ```js
-notify.setTitle(true) // Play animation
-notify.setTitle('New title') // Flashing new title
-notify.setTitle() // Clear Blinking Show original title
+notify.setTitle(true); // Play animation
+notify.setTitle("New title"); // Flashing new title
+notify.setTitle(); // Clear Blinking Show original title
 ```
 
 ### setInterval
@@ -177,7 +177,7 @@ notify.setTitle() // Clear Blinking Show original title
 Set time interval.
 
 ```js
-notify.setInterval(2000)
+notify.setInterval(2000);
 ```
 
 ### close
@@ -193,7 +193,7 @@ notify.close();
 Add counter
 
 ```js
-notify.addTimer()
+notify.addTimer();
 ```
 
 ### clearTimer
@@ -201,7 +201,7 @@ notify.addTimer()
 Clear counter.
 
 ```js
-notify.clearTimer()
+notify.clearTimer();
 ```
 
 ## Favicon Notice
@@ -211,7 +211,7 @@ notify.clearTimer()
 Set `icon` to display numbers or text
 
 ```js
-notify.setFavicon(10)
+notify.setFavicon(10);
 ```
 
 ### setFaviconColor
@@ -219,7 +219,7 @@ notify.setFavicon(10)
 Set `icon` display text color
 
 ```js
-notify.setFaviconColor('#0043ff')
+notify.setFaviconColor("#0043ff");
 ```
 
 ### setFaviconBackgroundColor
@@ -227,9 +227,9 @@ notify.setFaviconColor('#0043ff')
 Set `icon` to display text color
 
 ```js
-notify.setFaviconBackgroundColor('#0043ff')
+notify.setFaviconBackgroundColor("#0043ff");
 // Set font and background color
-notify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
+notify.setFaviconColor("#f5ff00").setFaviconBackgroundColor("red");
 ```
 
 ### faviconClear
@@ -237,7 +237,7 @@ notify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
 Clear digital display original `icon`.
 
 ```js
-notify.faviconClear()
+notify.faviconClear();
 ```
 
 ## Chrome Notice
@@ -247,16 +247,16 @@ notify.faviconClear()
 The chrome notification pops up, and the parameters are not passed as default values...
 
 ```js
-notify.notify(); 
+notify.notify();
 notify.notify({
-  title: 'New notice',
-  body: 'Thunder, it’s raining...',
-  openurl: 'https://jaywcjlove.github.io',
-  onclick: function() {
-    console.log('on click')
+  title: "New notice",
+  body: "Thunder, it’s raining...",
+  openurl: "https://jaywcjlove.github.io",
+  onclick: function () {
+    console.log("on click");
   },
-  onshow: function() {
-    console.log('on show')
+  onshow: function () {
+    console.log("on show");
   },
 });
 ```
@@ -280,22 +280,22 @@ notify.notify({
 ### Example 1
 
 ```js
-function iconNotify(num){
-  if(!notify) {
+function iconNotify(num) {
+  if (!notify) {
     var notify = new Notify({
-      effect: 'flash',
-      interval: 500
+      effect: "flash",
+      interval: 500,
     });
   }
-  if(num===0){
-    notify.faviconClear()
+  if (num === 0) {
+    notify.faviconClear();
     notify.setTitle();
-  } else if (num < 100){
-    notify.setFavicon(num)
-    notify.setTitle('There is new message!');
-  } else if (num > 99){
-    notify.setFavicon('..')
-    notify.setTitle('There is new message!');
+  } else if (num < 100) {
+    notify.setFavicon(num);
+    notify.setTitle("There is new message!");
+  } else if (num > 99) {
+    notify.setFavicon("..");
+    notify.setTitle("There is new message!");
   }
 }
 ```
@@ -304,23 +304,24 @@ function iconNotify(num){
 
 ```js
 var notify = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
 });
-notify.setFavicon('1');
+notify.setFavicon("1");
 ```
 
 ### Example 3
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: 'There is new message!',
-  updateFavicon:{ // Optional, default green background white
-    textColor: '#fff',// favicon font color
-    backgroundColor: '#2F9A00', // favicon background color
-  }
+  message: "There is new message!",
+  updateFavicon: {
+    // Optional, default green background white
+    textColor: "#fff", // favicon font color
+    backgroundColor: "#2F9A00", // favicon background color
+  },
 }).setFavicon(10);
 ```
 
@@ -334,74 +335,77 @@ var iN = new Notify().setFavicon(5);
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
   message: "There is new message!",
-  audio:{
-    file: 'msg.mp4',
-  }
-}).setFavicon(10).player();
+  audio: {
+    file: "msg.mp4",
+  },
+})
+  .setFavicon(10)
+  .player();
 ```
 
 ### Example 6
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: 'There is new message!',
-  audio:{
-    file: 'msg.mp4', // You can use arrays to pass sound files in multiple formats.
+  message: "There is new message!",
+  audio: {
+    file: "msg.mp4", // You can use arrays to pass sound files in multiple formats.
   },
-  notification:{
-    title: 'Notification!', // Set notification title
-    icon: '', // Set notification icon, The default is Favicon
-    body: 'You have a new message!', // Set message content
-  }
-}).setFavicon(10).player();
+  notification: {
+    title: "Notification!", // Set notification title
+    icon: "", // Set notification icon, The default is Favicon
+    body: "You have a new message!", // Set message content
+  },
+})
+  .setFavicon(10)
+  .player();
 
 // The chrome notification pops up, and the parameters are not passed as default values...
-iN.notify(); 
+iN.notify();
 
 iN.notify({
-  title: 'Notification!', // Set notification title
-  body: 'You have a new message!', // Set message content
-}); 
+  title: "Notification!", // Set notification title
+  body: "You have a new message!", // Set message content
+});
 ```
 
 ### Example 7
 
 ```js
-var iN =  new Notify({
-  effect: 'flash',
+var iN = new Notify({
+  effect: "flash",
   interval: 500,
-  message: 'There is new message!',
-  audio:{
-    file: ['msg.mp4', 'msg.mp3', 'msg.wav']
+  message: "There is new message!",
+  audio: {
+    file: ["msg.mp4", "msg.mp3", "msg.wav"],
   },
-  notification:{
-    title: 'Notification!', // Set notification title
-    body: 'You have a new message!', // Set message content
-  }
-})
-
+  notification: {
+    title: "Notification!", // Set notification title
+    body: "You have a new message!", // Set message content
+  },
+});
 
 iN.setFavicon(10).player();
 
-var n = new Notify()
+var n = new Notify();
 n.init({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: 'There is new message!',
-  audio:{
-    file: ['openSub.mp4', 'openSub.mp3', 'openSub.wav'],
+  message: "There is new message!",
+  audio: {
+    file: ["openSub.mp4", "openSub.mp3", "openSub.wav"],
   },
-  notification:{
-    title:'Notification!',
-    icon: '',
-    body:'You have a new message!',
-  }
-})
+  notification: {
+    title: "Notification!",
+    icon: "",
+    body: "You have a new message!",
+  },
+});
 
 n.setFavicon(10).player();
 ```
