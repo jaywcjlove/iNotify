@@ -22,66 +22,68 @@
   </a>
 </p>
 
-JS 实现浏览器的 title 闪烁、滚动、声音提示、通知，没有依赖. 它不会干扰任何JavaScript库或框架。有合理的体积 5.05kb (gzipped: 1.75kb)，官方文档[实例预览](https://jaywcjlove.github.io/iNotify)。
+JS 实现浏览器的 title 闪烁、滚动、声音提示、通知，没有依赖. 它不会干扰任何 JavaScript 库或框架。有合理的体积 5.05kb (gzipped: 1.75kb)，官方文档[实例预览](https://jaywcjlove.github.io/iNotify)。
 
 ## 下载
 
 ```bash
 # v2.x
 $ npm install @wcjiang/notify --save
-# v1.x 
+# v1.x
 $ npm install title-notify --save
 ```
 
 ## 使用
 
-```js 
-import Notify from '@wcjiang/notify';
+```js
+import Notify from "@wcjiang/notify";
 
 const notify = new Notify({
-  message: '有消息了。', // 标题
-  effect: 'flash', // flash | scroll 闪烁还是滚动
-  openurl:'https://github.com/jaywcjlove/iNotify', // 点击弹窗打开连接地址
-  onclick: () => { // 点击弹出的窗之行事件
-    console.log('---')
+  message: "有消息了。", // 标题
+  effect: "flash", // flash | scroll 闪烁还是滚动
+  openurl: "https://github.com/jaywcjlove/iNotify", // 点击弹窗打开连接地址
+  onclick: () => {
+    // 点击弹出的窗之行事件
+    console.log("---");
   },
   // 可选播放声音
-  audio:{
+  audio: {
     // 可以使用数组传多种格式的声音文件
-    file: ['msg.mp4','msg.mp3','msg.wav']
+    file: ["msg.mp4", "msg.mp3", "msg.wav"],
     // 下面也是可以的哦
     // file: 'msg.mp4'
   },
   // 标题闪烁，或者滚动速度
   interval: 1000,
+  disableFavicon: false, // 可选，默认不禁用。如果为true则不覆盖原有favicon
   // 可选，默认绿底白字的  Favicon
-  updateFavicon:{
+  updateFavicon: {
     // favicon 字体颜色
-    textColor: '#fff',
+    textColor: "#fff",
     // 背景颜色，设置背景颜色透明，将值设置为“transparent”
-    backgroundColor: '#2F9A00' 
+    backgroundColor: "#2F9A00",
   },
   // 可选chrome浏览器通知，默认不填写就是下面的内容
-  notification:{
-    title:'通知！', // 设置标题
-    icon:'', // 设置图标 icon 默认为 Favicon
-    body:'您来了一条新消息', // 设置消息内容
-  }
+  notification: {
+    title: "通知！", // 设置标题
+    icon: "", // 设置图标 icon 默认为 Favicon
+    body: "您来了一条新消息", // 设置消息内容
+  },
 });
 
 notify.player();
 ```
 
-在您的HTML中手动下载并引入 **notify.js**，你也可以通过 [UNPKG](https://unpkg.com/@wcjiang/notify/dist/) 进行下载：
+在您的 HTML 中手动下载并引入 **notify.js**，你也可以通过 [UNPKG](https://unpkg.com/@wcjiang/notify/dist/) 进行下载：
 
 ```html
 <script src="https://unpkg.com/@wcjiang/notify/dist/notify.min.js"></script>
 <script type="text/javascript">
-var notify = new Notify({
-  effect: 'flash',
-  interval: 500,
-});
-notify.setFavicon('1');
+  var notify = new Notify({
+    effect: "flash",
+    interval: 500,
+  });
+  notify.setFavicon("1");
 </script>
 ```
 
@@ -97,7 +99,7 @@ notify.setFavicon('1');
 - **updateFavicon**: 设置 Favicon 图标颜色
   - **textColor**: 设置 favicon 字体颜色
   - **backgroundColor**: 背景颜色，设置背景颜色透明，将值设置为 `transparent`
-- **notification**: 可选chrome浏览器通知，默认不填写就是下面的内容
+- **notification**: 可选 chrome 浏览器通知，默认不填写就是下面的内容
   - **title**: 默认值 `通知！`
   - **icon**: 设置图标 icon 默认为 Favicon
   - **body**: 设置消息内容
@@ -107,7 +109,7 @@ notify.setFavicon('1');
 判断浏览器弹框通知是否被阻止。
 
 ```js
-iNotify.isPermission()
+iNotify.isPermission();
 ```
 
 ## 声音设置
@@ -117,7 +119,7 @@ iNotify.isPermission()
 播放声音
 
 ```js
-iNotify.player()
+iNotify.player();
 ```
 
 ### loopPlay
@@ -125,7 +127,7 @@ iNotify.player()
 自动播放声音
 
 ```js
-iNotify.loopPlay()
+iNotify.loopPlay();
 ```
 
 ### stopPlay
@@ -133,16 +135,16 @@ iNotify.loopPlay()
 停止播放声音
 
 ```js
-iNotify.stopPlay()
+iNotify.stopPlay();
 ```
 
 ### setURL
 
-设置播放声音URL
+设置播放声音 URL
 
 ```js
-iNotify.setURL('msg.mp3') // 设置一个
-iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // 设置多个
+iNotify.setURL("msg.mp3"); // 设置一个
+iNotify.setURL(["msg.mp3", "msg.ogg", "msg.mp4"]); // 设置多个
 ```
 
 ## title
@@ -154,18 +156,17 @@ iNotify.setURL(['msg.mp3','msg.ogg','msg.mp4']) // 设置多个
 设置标题，
 
 ```js
-iNotify.setTitle(true) // 播放动画
-iNotify.setTitle('新标题') // 闪烁新标题
-iNotify.setTitle() // 清除闪烁 显示原来的标题
+iNotify.setTitle(true); // 播放动画
+iNotify.setTitle("新标题"); // 闪烁新标题
+iNotify.setTitle(); // 清除闪烁 显示原来的标题
 ```
-
 
 ### setInterval
 
-设置时间间隔  
+设置时间间隔
 
 ```js
-iNotify.setInterval(2000)
+iNotify.setInterval(2000);
 ```
 
 ### addTimer
@@ -173,25 +174,25 @@ iNotify.setInterval(2000)
 添加计数器
 
 ```js
-iNotify.addTimer()
+iNotify.addTimer();
 ```
 
 ### clearTimer
 
-清除计数器  
+清除计数器
 
 ```js
-iNotify.clearTimer()
+iNotify.clearTimer();
 ```
 
-## favicon通知
+## favicon 通知
 
 ### setFavicon
 
 设置 icon 显示数字或者文本
 
 ```js
-iNotify.setFavicon(10)
+iNotify.setFavicon(10);
 ```
 
 ### setFaviconColor
@@ -199,7 +200,7 @@ iNotify.setFavicon(10)
 设置 icon 显示文本颜色
 
 ```js
-iNotify.setFaviconColor('#0043ff')
+iNotify.setFaviconColor("#0043ff");
 ```
 
 ### setFaviconBackgroundColor
@@ -207,43 +208,43 @@ iNotify.setFaviconColor('#0043ff')
 设置 icon 显示文本颜色
 
 ```js
-iNotify.setFaviconBackgroundColor('#0043ff')
+iNotify.setFaviconBackgroundColor("#0043ff");
 // 设置字体和背景颜色
-iNotify.setFaviconColor('#f5ff00').setFaviconBackgroundColor('red');
+iNotify.setFaviconColor("#f5ff00").setFaviconBackgroundColor("red");
 ```
 
 ### faviconClear
 
-清除数字显示原来的icon
+清除数字显示原来的 icon
 
 ```js
-iNotify.faviconClear()
+iNotify.faviconClear();
 ```
 
-## chrome通知
+## chrome 通知
 
 ### notify
 
-弹出chrome通知，不传参数为预设值...
+弹出 chrome 通知，不传参数为预设值...
 
 ```js
-iNotify.notify(); 
+iNotify.notify();
 iNotify.notify({
-  title: '新通知',
-  body: '打雷啦，下雨啦...',
-  openurl: 'http://www.bing.com',
-  onclick: function() {
-    console.log('on click')
+  title: "新通知",
+  body: "打雷啦，下雨啦...",
+  openurl: "http://www.bing.com",
+  onclick: function () {
+    console.log("on click");
   },
-  onshow: function() {
-    console.log('on show')
+  onshow: function () {
+    console.log("on show");
   },
 });
 ```
 
 - title 一定会被显示的通知标题。
 - dir 文字的方向；它的值可以是 auto（自动）, ltr（从左到右）, or rtl（从右到左）。
-- icon 一个图片的URL，将被用于显示通知的图标。
+- icon 一个图片的 URL，将被用于显示通知的图标。
 - body 通知中额外显示的字符串。
 - openurl 点击打开指定 URL。
 - onclick 每当用户点击通知时被触发。
@@ -255,28 +256,27 @@ iNotify.notify({
 
 `iNotify.init().title;` 获取标题
 
-
 ## 例子
 
 ### 实例一
 
 ```js
-function iconNotify(num){
-  if(!notify) {
+function iconNotify(num) {
+  if (!notify) {
     var notify = new Notify({
-      effect: 'flash',
-      interval: 500
+      effect: "flash",
+      interval: 500,
     });
   }
-  if(num===0){
-    notify.faviconClear()
+  if (num === 0) {
+    notify.faviconClear();
     notify.setTitle();
-  } else if (num < 100){
-    notify.setFavicon(num)
-    notify.setTitle('有新消息！');
-  } else if (num > 99){
-    notify.setFavicon('..')
-    notify.setTitle('有新消息！');
+  } else if (num < 100) {
+    notify.setFavicon(num);
+    notify.setTitle("有新消息！");
+  } else if (num > 99) {
+    notify.setFavicon("..");
+    notify.setTitle("有新消息！");
   }
 }
 ```
@@ -285,23 +285,24 @@ function iconNotify(num){
 
 ```js
 var notify = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
 });
-notify.setFavicon('1');
+notify.setFavicon("1");
 ```
 
 ### 实例三
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: '有消息拉！',
-  updateFavicon:{ // 可选，默认绿底白字
-    textColor: '#fff',// favicon 字体颜色
-    backgroundColor: '#2F9A00', // 背景颜色
-  }
+  message: "有消息拉！",
+  updateFavicon: {
+    // 可选，默认绿底白字
+    textColor: "#fff", // favicon 字体颜色
+    backgroundColor: "#2F9A00", // 背景颜色
+  },
 }).setFavicon(10);
 ```
 
@@ -315,74 +316,77 @@ var iN = new Notify().setFavicon(5);
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
   message: "有消息拉！",
-  audio:{
-    file: 'msg.mp4',
-  }
-}).setFavicon(10).player();
+  audio: {
+    file: "msg.mp4",
+  },
+})
+  .setFavicon(10)
+  .player();
 ```
 
 ### 实例五
 
 ```js
 var iN = new Notify({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: '有消息拉！',
-  audio:{
-    file: 'msg.mp4'//可以使用数组传多种格式的声音文件
+  message: "有消息拉！",
+  audio: {
+    file: "msg.mp4", //可以使用数组传多种格式的声音文件
   },
-  notification:{
-    title: '通知！',
-    icon: '',
-    body: '您来了一条新消息'
-  }
-}).setFavicon(10).player();
+  notification: {
+    title: "通知！",
+    icon: "",
+    body: "您来了一条新消息",
+  },
+})
+  .setFavicon(10)
+  .player();
 
 //弹出chrome通知，不传参数为预设值...
-iN.notify(); 
+iN.notify();
 
 iN.notify({
-  title: '新通知',
-  body: '打雷啦，下雨啦...'
-}); 
+  title: "新通知",
+  body: "打雷啦，下雨啦...",
+});
 ```
 
 ### 实例六
 
 ```js
-var iN =  new Notify({
-  effect: 'flash',
+var iN = new Notify({
+  effect: "flash",
   interval: 500,
-  message: '有消息拉！',
-  audio:{
-    file: ['msg.mp4', 'msg.mp3', 'msg.wav']
+  message: "有消息拉！",
+  audio: {
+    file: ["msg.mp4", "msg.mp3", "msg.wav"],
   },
-  notification:{
-    title: '通知！',
-    body:'您来了一条新消息'
-  }
-})
-
+  notification: {
+    title: "通知！",
+    body: "您来了一条新消息",
+  },
+});
 
 iN.setFavicon(10).player();
 
-var n = new Notify()
+var n = new Notify();
 n.init({
-  effect: 'flash',
+  effect: "flash",
   interval: 500,
-  message: '有消息拉！',
-  audio:{
-    file: ['openSub.mp4', 'openSub.mp3', 'openSub.wav'],
+  message: "有消息拉！",
+  audio: {
+    file: ["openSub.mp4", "openSub.mp3", "openSub.wav"],
   },
-  notification:{
-    title:'通知！',
-    icon: '',
-    body:'您来了一个客户',
-  }
-})
+  notification: {
+    title: "通知！",
+    icon: "",
+    body: "您来了一个客户",
+  },
+});
 
 n.setFavicon(10).player();
 ```
