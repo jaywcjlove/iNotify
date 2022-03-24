@@ -1,14 +1,14 @@
 // 提醒是否添加chrome通知
-if (window.Notification && window.Notification.permission !== "granted") {
+if (window.Notification && window.Notification.permission !== 'granted') {
   window.Notification.requestPermission();
 }
-let iconURL = "";
-const repeatableEffects = ["flash", "scroll"];
+let iconURL = '';
+const repeatableEffects = ['flash', 'scroll'];
 
 const defaultNotification = {
-  title: "iNotify !",
-  body: "You have a new message.",
-  openurl: "",
+  title: 'iNotify !',
+  body: 'You have a new message.',
+  openurl: '',
 };
 function jsonArguments(news, olds) {
   for (const a in olds) {
@@ -19,15 +19,17 @@ function jsonArguments(news, olds) {
   return olds;
 }
 function isArray(value) {
-  return Object.prototype.toString.call(value) === "[object Array]";
+  return Object.prototype.toString.call(value) === '[object Array]';
 }
 
 function createAudio(url) {
-  const audioElm = document.createElement("audio");
+  const audioElm = document.createElement('audio');
+  audioElm.autoplay = true;
+  audioElm.muted = true;
   let source;
   if (isArray(url) && url.length > 0) {
     for (let i = 0; i < url.length; i++) {
-      source = document.createElement("source");
+      source = document.createElement('source');
       source.src = url[i];
       source.type = `audio/${getExtension(url[i])}`;
       audioElm.appendChild(source);
@@ -39,9 +41,9 @@ function createAudio(url) {
 }
 
 function getFavicon(setting) {
-  let ic = document.querySelectorAll("link[rel~=shortcut]")[0];
+  let ic = document.querySelectorAll('link[rel~=shortcut]')[0];
   if (!ic) {
-    ic = changeFavicon("O", setting);
+    ic = changeFavicon('O', setting);
   }
   return ic;
 }
@@ -51,28 +53,28 @@ function getExtension(fileName) {
 }
 
 function changeFavicon(num, settings) {
-  const canvas = document.createElement("canvas");
-  const head = document.getElementsByTagName("head")[0];
-  const linkTag = document.createElement("link");
+  const canvas = document.createElement('canvas');
+  const head = document.getElementsByTagName('head')[0];
+  const linkTag = document.createElement('link');
   let ctx = null;
 
   canvas.height = 32;
   canvas.width = 32;
-  ctx = canvas.getContext("2d");
+  ctx = canvas.getContext('2d');
   ctx.fillStyle = settings.backgroundColor;
   ctx.fillRect(0, 0, 32, 32);
 
-  ctx.textAlign = "center";
+  ctx.textAlign = 'center';
   ctx.font = '22px "helvetica", sans-serif';
   ctx.fillStyle = settings.textColor;
   num && ctx.fillText(num, 16, 24);
 
   // 生成到
-  linkTag.setAttribute("rel", "shortcut icon");
-  linkTag.setAttribute("type", "image/x-icon");
-  linkTag.setAttribute("id", `new${settings.id}`);
-  linkTag.setAttribute("href", canvas.toDataURL("image/png"));
-  iconURL = canvas.toDataURL("image/png");
+  linkTag.setAttribute('rel', 'shortcut icon');
+  linkTag.setAttribute('type', 'image/x-icon');
+  linkTag.setAttribute('id', `new${settings.id}`);
+  linkTag.setAttribute('href', canvas.toDataURL('image/png'));
+  iconURL = canvas.toDataURL('image/png');
   return head.appendChild(linkTag);
 }
 
@@ -88,26 +90,24 @@ Notify.prototype = {
       config = {};
     }
     this.interval = config.interval || 100; // 响应时长
-    this.effect = config.effect || "flash"; // 效果
+    this.effect = config.effect || 'flash'; // 效果
     this.title = config.title || document.title; // 标题
     this.message = config.message || this.title; // 原来的标题
     this.onclick = config.onclick || this.onclick; // 点击事件
     this.openurl = config.openurl || this.openurl; // 点击事件
     this.disableFavicon = config.disableFavicon || false; // 禁用favicon 默认开启
-    this.updateFavicon =
-      !this.disableFavicon &&
-      (config.updateFavicon || {
-        id: "favicon",
-        textColor: "#fff",
-        backgroundColor: "#2F9A00",
+    this.updateFavicon = !this.disableFavicon
+      && (config.updateFavicon || {
+        id: 'favicon',
+        textColor: '#fff',
+        backgroundColor: '#2F9A00',
       });
-    this.audio = config.audio || "";
+    this.audio = config.audio || '';
     this.favicon = !this.disableFavicon && getFavicon(this.updateFavicon);
     this.cloneFavicon = this.favicon && this.favicon.cloneNode(true);
-    iconURL =
-      config.notification && config.notification.icon
-        ? config.notification.icon
-        : config.icon
+    iconURL = config.notification && config.notification.icon
+      ? config.notification.icon
+      : config.icon
         ? config.icon
         : this.favicon.href;
     defaultNotification.icon = iconURL;
@@ -119,10 +119,9 @@ Notify.prototype = {
     return this;
   },
   render() {
-    if (this.effect === "flash") {
-      document.title =
-        this.title === document.title ? this.message : this.title;
-    } else if (this.effect === "scroll") {
+    if (this.effect === 'flash') {
+      document.title = this.title === document.title ? this.message : this.title;
+    } else if (this.effect === 'scroll') {
       const title = this.message || document.title;
       if (!this.scrollTitle || !this.scrollTitle.slice(1)) {
         document.title = title;
@@ -142,7 +141,7 @@ Notify.prototype = {
       }
     } else if (str) {
       this.message = str;
-      this.scrollTitle = "";
+      this.scrollTitle = '';
       this.addTimer();
     } else {
       this.clearTimer();
@@ -178,7 +177,15 @@ Notify.prototype = {
       this.audioElm = createAudio(this.audio.file);
       document.body.appendChild(this.audioElm);
     }
-    this.audioElm.play();
+    this.audioElm.muted = false;
+    const resp = this.audioElm.play();
+    if (resp !== undefined) {
+      resp.then(() => {
+        // autoplay starts!
+      }).catch(() => {
+        // show error
+      });
+    }
     return this;
   },
   notify(json) {
@@ -197,17 +204,17 @@ Notify.prototype = {
       if (json.dir) option.dir = json.dir;
       const n = new Notification(nt.title || json.title, option);
       n.onclick = () => {
-        onclick && typeof onclick === "function" && onclick(n);
+        onclick && typeof onclick === 'function' && onclick(n);
         url && window.open(url);
       };
       n.onshow = () => {
-        json.onshow && typeof json.onshow === "function" && json.onshow(n);
+        json.onshow && typeof json.onshow === 'function' && json.onshow(n);
       };
       n.onclose = () => {
-        json.onclose && typeof json.onclose === "function" && json.onclose(n);
+        json.onclose && typeof json.onclose === 'function' && json.onclose(n);
       };
       n.onerror = () => {
-        json.onerror && typeof json.onerror === "function" && json.onerror(n);
+        json.onerror && typeof json.onerror === 'function' && json.onerror(n);
       };
       this.Notifiy = n;
     }
@@ -215,7 +222,7 @@ Notify.prototype = {
   },
   // 是否许可弹框通知
   isPermission() {
-    return window.Notification && Notification.permission === "granted";
+    return window.Notification && Notification.permission === 'granted';
   },
   // 设置时间间隔
   setInterval(num) {
@@ -283,8 +290,8 @@ Notify.prototype = {
   // 清除Icon
   faviconClear() {
     const newicon = document.getElementById(`new${this.updateFavicon.id}`);
-    const head = document.getElementsByTagName("head")[0];
-    const ficon = document.querySelectorAll("link[rel~=shortcut]");
+    const head = document.getElementsByTagName('head')[0];
+    const ficon = document.querySelectorAll('link[rel~=shortcut]');
     newicon && newicon.remove();
     if (ficon.length > 0) {
       for (let i = 0; i < ficon.length; i++) {
