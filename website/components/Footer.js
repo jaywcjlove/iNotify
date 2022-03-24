@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Footer.less';
+import style from './Footer.module.less';
 
 export default function Footer({ name, href, year }) {
   return (

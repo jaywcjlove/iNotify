@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import '@wcj/dark-mode';
-import GithubCorner from './components/GithubCorner';
+import GitHubCorners from '@uiw/react-github-corners';
 import DocumentStr from '../README.md';
 import GithubShields from './components/GithubShields';
 import Button from './components/Button';
 import Footer from './components/Footer';
-import styles from './styles/index.less';
+import styles from './styles/index.module.less';
 import './styles/reset.less';
-import Notify from '../src/main';
+import Notify from '..';
 import notifyImg from './assets/iNotify.png';
 
 import mp4 from './assets/msg.mp4';
@@ -138,8 +138,8 @@ export default class App extends Component {
     if (DocumentStrSource) DocumentStrSource = DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '');
     return (
       <div className={styles.wapper}>
-        <dark-mode light="Dart" dark="Light" style={{ position: 'fixed', top: 8, left: 10 }} />
-        <GithubCorner url="https://github.com/jaywcjlove/iNotify" />
+        <dark-mode permanent light="Dart" dark="Light" style={{ position: 'fixed', top: 8, left: 10 }} />
+        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/jaywcjlove/iNotify" />
         <div className={styles.panel}>
           <h1>
             iNotify

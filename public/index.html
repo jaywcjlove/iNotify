@@ -8,14 +8,10 @@
 </head>
 
 <body>
-  <script>
-    const targetProtocol = 'https:';
-    if (window.location.protocol !== targetProtocol && /\.com$/.test(window.location.host)) {
-      window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
-    }
-  </script>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
   <div id="root"></div>
-  <script src="./index.js"></script>
 </body>
 
 </html>

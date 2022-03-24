@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './GithubShields.less';
+import styles from './GithubShields.module.less';
 
 export default function GithubShields({ source }) {
   return (
