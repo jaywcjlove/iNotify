@@ -1,10 +1,10 @@
-import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 import json from '@rollup/plugin-json';
-import sizes from '@atomico/rollup-plugin-sizes';
+import sizes from 'rollup-plugin-sizes';
 import banner from 'bannerjs';
-import pkg from './package.json';
+import pkg from './package.json' assert { type: "json" };; 
 
 export default [
   {
@@ -73,7 +73,7 @@ export default [
       nodeResolve({
         browser: true,
       }),
-      terser({}),
+      terser(),
       commonjs(),
       sizes(),
     ],

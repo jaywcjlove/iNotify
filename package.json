@@ -23,8 +23,8 @@
   },
   "homepage": "http://jaywcjlove.github.io/iNotify",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "watch": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.mjs",
+    "watch": "rollup -c rollup.config.mjs -w",
     "start": "kkt start --app-src ./website",
     "doc": "kkt build --app-src ./website"
   },
@@ -40,29 +40,29 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "devDependencies": {
-    "@atomico/rollup-plugin-sizes": "~1.1.4",
-    "@kkt/less-modules": "~7.1.1",
-    "@kkt/scope-plugin-options": "~7.1.1",
-    "@kkt/raw-modules": "~7.1.1",
-    "@rollup/plugin-commonjs": "~21.0.1",
-    "@rollup/plugin-json": "~4.1.0",
-    "@rollup/plugin-node-resolve": "~13.1.1",
-    "@uiw/react-markdown-preview": "~4.0.5",
-    "@uiw/react-github-corners": "~1.5.3",
-    "@wcj/dark-mode": "~1.0.13",
-    "bannerjs": "^1.0.5",
-    "classnames": "^2.2.6",
-    "babel-eslint": "~10.1.0",
-    "eslint": "^5.15.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.0",
-    "eslint-plugin-react": "^7.10.0",
-    "kkt": "~7.1.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "rollup": "~2.70.0",
-    "rollup-plugin-terser": "~7.0.2"
+    "@kkt/less-modules": "~7.3.2",
+    "@kkt/raw-modules": "~7.3.2",
+    "@kkt/scope-plugin-options": "~7.3.2",
+    "@rollup/plugin-commonjs": "~24.0.0",
+    "@rollup/plugin-json": "~6.0.0",
+    "@rollup/plugin-node-resolve": "~15.0.1",
+    "@rollup/plugin-terser": "^0.2.1",
+    "@uiw/react-github-corners": "~1.5.15",
+    "@uiw/react-markdown-preview": "~4.1.6",
+    "@wcj/dark-mode": "~1.0.15",
+    "bannerjs": "^2.1.0",
+    "classnames": "~2.3.2",
+    "kkt": "~7.3.2",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
+    "rollup": "~3.9.0",
+    "rollup-plugin-sizes": "~1.0.5"
   }
 }
