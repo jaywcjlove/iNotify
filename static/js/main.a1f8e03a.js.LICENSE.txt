@@ -1,0 +1,51 @@
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+/*!
+ * @uiw/copy-to-clipboard v1.0.12
+ * Copy to clipboard.
+ * 
+ * Copyright (c) 2021 Kenny Wang
+ * https://github.com/uiwjs/copy-to-clipboard.git
+ * 
+ * Licensed under the MIT license.
+ */
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**! 
+ * @wcjiang/notify v2.1.0 
+ * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
+ * 
+ * Copyright (c) 2022 kenny wang 
+ * http://jaywcjlove.github.io/iNotify 
+ * Licensed under the MIT license 
+ */
