@@ -57,7 +57,7 @@
     "@uiw/react-github-corners": "~1.5.15",
     "@uiw/react-markdown-preview": "~4.1.6",
     "@wcj/dark-mode": "~1.0.15",
-    "bannerjs": "^2.1.0",
+    "bannerjs": "^3.0.0",
     "classnames": "~2.3.2",
     "kkt": "~7.3.2",
     "react": "~18.2.0",
