@@ -49,7 +49,7 @@
   "devDependencies": {
     "@kkt/less-modules": "~7.3.2",
     "@kkt/raw-modules": "~7.3.2",
-    "@kkt/scope-plugin-options": "~7.3.2",
+    "@kkt/scope-plugin-options": "~7.4.0",
     "@rollup/plugin-commonjs": "~24.0.0",
     "@rollup/plugin-json": "~6.0.0",
     "@rollup/plugin-node-resolve": "~15.0.1",
