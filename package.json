@@ -62,7 +62,7 @@
     "kkt": "~7.3.2",
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
-    "rollup": "~3.9.0",
+    "rollup": "~3.20.0",
     "rollup-plugin-sizes": "~1.0.5"
   }
 }
