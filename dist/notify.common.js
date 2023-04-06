@@ -1,11 +1,13 @@
-/*!
- * @wcjiang/notify v2.1.0
- * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice.
+/**! 
+ * @wcjiang/notify v2.1.0 
+ * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
  * 
- * Copyright (c) 2022 kenny wang
- * http://jaywcjlove.github.io/iNotify
+ * Copyright (c) 2023 kenny wang 
+ * https://github.com/jaywcjlove/iNotify.git 
  * 
- * Licensed under the MIT license.
+ * @website: http://jaywcjlove.github.io/iNotify
+ 
+ * Licensed under the MIT license 
  */
 
 'use strict';
