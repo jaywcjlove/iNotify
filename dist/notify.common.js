@@ -1,5 +1,5 @@
 /**! 
- * @wcjiang/notify v2.1.0 
+ * @wcjiang/notify v2.1.1 
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
  * 
  * Copyright (c) 2023 kenny wang 
@@ -14,12 +14,12 @@
 
 // 提醒是否添加chrome通知
 if (window.Notification && window.Notification.permission !== 'granted') {
-  window.Notification.requestPermission().then(() => {
-    if (result === 'denied') {
+  window.Notification.requestPermission().then((permission) => {
+    if (permission === 'denied') {
       console.log("Permission wasn't granted. Allow a retry.");
       return;
     }
-    if (result === 'default') {
+    if (permission === 'default') {
       console.log('The permission request was dismissed.');
       return;
     }
