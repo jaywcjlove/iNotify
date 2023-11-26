@@ -38,6 +38,13 @@ jobs:
         id: tag_version
         uses: jaywcjlove/changelog-generator@main
 
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@main
+        with:
+          filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+          output: build/CONTRIBUTORS.svg
+          avatarSize: 42
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -77,7 +84,7 @@ jobs:
       #     token: ${{ secrets.NPM_TOKEN }}
       #     package: ./package.json
 
-      - run: npm publish
+      - run: npm publish --access public --provenance
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -394,6 +394,16 @@ n.init({
 n.setFavicon(10).player();
 ```
 
+## 贡献者
+
+一如既往，感谢我们出色的贡献者！
+
+<a href="https://github.com/jaywcjlove/iNotify/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/iNotify/CONTRIBUTORS.svg" />
+</a>
+
+由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 制作。
+
 ## License
 
 [MIT © Kenny Wong](./MIT-LICENSE)
