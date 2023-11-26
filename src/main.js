@@ -1,6 +1,15 @@
 // 提醒是否添加chrome通知
 if (window.Notification && window.Notification.permission !== 'granted') {
-  window.Notification.requestPermission();
+  window.Notification.requestPermission().then((permission) => {
+    if (permission === 'denied') {
+      console.log("Permission wasn't granted. Allow a retry.");
+      return;
+    }
+    if (permission === 'default') {
+      console.log('The permission request was dismissed.');
+      return;
+    }
+  });
 }
 let iconURL = '';
 const repeatableEffects = ['flash', 'scroll'];
