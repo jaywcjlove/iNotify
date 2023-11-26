@@ -11,7 +11,9 @@ export default (conf, evn, options) => {
       path.resolve(process.cwd(), 'README.md')
     ]
   });
-
+  conf.ignoreWarnings = [
+    { module: /node_modules[\\/]parse5[\\/]/ }
+  ];
   if (evn === 'production') {
     conf.optimization = {
       ...conf.optimization,
