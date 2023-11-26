@@ -22,6 +22,7 @@
     "url": "https://github.com/jaywcjlove/iNotify/issues"
   },
   "homepage": "http://jaywcjlove.github.io/iNotify",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
     "watch": "rollup -c rollup.config.mjs -w",
