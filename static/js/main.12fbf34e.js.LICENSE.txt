@@ -38,7 +38,7 @@
  */
 
 /**! 
- * @wcjiang/notify v2.1.2 
+ * @wcjiang/notify v2.1.3 
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
  * 
  * Copyright (c) 2023 kenny wang 
