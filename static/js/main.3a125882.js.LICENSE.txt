@@ -26,10 +26,10 @@
  */
 
 /**! 
- * @uiw/copy-to-clipboard v1.0.16 
+ * @uiw/copy-to-clipboard v1.0.17 
  * Copy to clipboard. 
  * 
- * Copyright (c) 2023 Kenny Wang 
+ * Copyright (c) 2024 Kenny Wang 
  * https://github.com/uiwjs/copy-to-clipboard.git 
  * 
  * @website: https://uiwjs.github.io/copy-to-clipboard
@@ -41,7 +41,7 @@
  * @wcjiang/notify v2.1.3 
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
  * 
- * Copyright (c) 2023 kenny wang 
+ * Copyright (c) 2024 kenny wang 
  * https://github.com/jaywcjlove/iNotify.git 
  * 
  * @website: http://jaywcjlove.github.io/iNotify
