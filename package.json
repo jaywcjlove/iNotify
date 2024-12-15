@@ -53,7 +53,7 @@
     "@kkt/scope-plugin-options": "^7.4.9",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.0",
     "@uiw/react-github-corners": "^1.5.15",
     "@uiw/react-markdown-preview": "^5.0.0",
