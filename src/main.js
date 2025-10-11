@@ -197,7 +197,7 @@ Notify.prototype = {
     }
     return this;
   },
-  notify(json) {
+  notify(json = {}) {
     let nt = this.notification;
     const url = json.openurl ? json.openurl : this.openurl;
     const onclick = json.onclick ? json.onclick : this.onclick;

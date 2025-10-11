@@ -1,8 +1,8 @@
 /**! 
- * @wcjiang/notify v2.1.1 
+ * @wcjiang/notify v2.1.3 
  * JS achieve the browser title flashing , scrolling, voice prompts , chrome notice. 
  * 
- * Copyright (c) 2023 kenny wang 
+ * Copyright (c) 2025 kenny wang 
  * https://github.com/jaywcjlove/iNotify.git 
  * 
  * @website: http://jaywcjlove.github.io/iNotify
@@ -215,7 +215,7 @@
       }
       return this;
     },
-    notify(json) {
+    notify(json = {}) {
       let nt = this.notification;
       const url = json.openurl ? json.openurl : this.openurl;
       const onclick = json.onclick ? json.onclick : this.onclick;
