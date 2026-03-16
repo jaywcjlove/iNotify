@@ -57,10 +57,10 @@
     <img src="https://img.shields.io/github/issues/jaywcjlove/iNotify.svg">
   </a>
   <a href="https://github.com/jaywcjlove/iNotify/network">
-    <img src="https://img.shields.io/github/forks/jaywcjlove/iNotify.svg">
+    <img src="https://img.shields.io/github/forks/jaywcjlove/iNotify.svg?style=flat">
   </a>
   <a href="https://github.com/jaywcjlove/iNotify/stargazers">
-    <img src="https://img.shields.io/github/stars/jaywcjlove/iNotify.svg">
+    <img src="https://img.shields.io/github/stars/jaywcjlove/iNotify.svg?style=flat">
   </a>
   <a href="https://github.com/jaywcjlove/iNotify/releases">
     <img src="https://img.shields.io/github/release/jaywcjlove/iNotify.svg">
